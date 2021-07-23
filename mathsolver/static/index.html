@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MathSolver</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/451/fabric.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+
+	<style type="text/css">
+		 .divider {
+		 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M33 0 L33 100' stroke='red' stroke-dasharray='4' stroke-width='0.5'/><path d='M66 0 L66 100' stroke='red' stroke-dasharray='4' stroke-width='0.5'/></svg>");
+		 }
+	</style>
+</head>
+<body onload="main()">
+
+	<main class="container-fluid text-center mt-1">
+		<h2 class="display-3">Math Solver</h2>
+		<p>A handwritten math evaluator</p>
+		<div class="row mt-4">
+			<div class="col-6 pe-1">
+				<div class="canvas-container ms-auto" style="width: 384px; height: 128px; position: relative; user-select: none;">
+					<div class="divider" style="width: 384px !important; height: 128px !important; position: absolute; user-select: none; pointer-events: none;z-index: 9999;"></div>
+					<canvas id="c1" width="384" height="128" style="border:1px solid black;"></canvas>
+				</div>
+			</div>
+			<div class="col-2 align-self-center ps-0">
+				<p id="answer" class="text-start" style="font-size:64px">=</p>
+			</div>
+			<div class="col">
+				<button class="btn btn-primary" onclick="calculate()">Calculate!</button>
+				<button class="btn btn-primary" onclick="clear_canvas()">Clear</button>
+			</div>
+
+		</div>
+		<hr class="mt-5">
+		<div class="row">
+			<small>© 2021 Aniruddha Deb. All rights reserved.</small>
+		</div>
+	</main>
+
+</body>
+</html>
