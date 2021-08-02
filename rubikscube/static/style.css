@@ -1,0 +1,34 @@
+html, body {
+	height: 100vh; 
+	min-height: 100vh;
+	background-color: #161619;
+	background-image: radial-gradient(#1e1e21, #161619);
+}
+
+.cube-frame {
+	height: 80vh; 
+	min-height: 80vh;
+}
+
+.scoreboard {
+	height: 20vh;
+	min-height: 20vh;
+}
+
+.scorecard {
+
+}
+
+.scorecard-header {
+	text-align: center;
+	font-size: 30px;
+	color: #ffffff;
+	background-color: #2f8b4b;
+}
+
+.scorecard-score {
+	text-align: center;
+	font-size: 30px;
+	color: #ffffff;
+	background-color: #4fb96f;
+}

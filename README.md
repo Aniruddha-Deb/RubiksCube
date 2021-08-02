@@ -1,3 +1,3 @@
-# Math Solver
+# Rubiks' Cube
 
 

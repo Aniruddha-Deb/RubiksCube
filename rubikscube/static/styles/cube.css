@@ -206,7 +206,7 @@
 .cube .sticker.green 	{ background: #009D54;	}
 .cube .sticker.orange 	{ background: #E87000; 	}
 .cube .sticker.yellow 	{ background: #F5B400; 	}
-.cube .sticker.gray 	{ background: #888888; 	}
+.cube .sticker.gray 	{ background: #7f888f; 	}
 
 .cube .sticker.stickerLogo {
 
@@ -235,8 +235,8 @@
 	z-index: 1000;
 	width:  90%;
 	height: 90%;
-	font-size:   1em;
-	line-height: 0.9em;
+	font-size:   0.5em;
+	line-height: 1.5em;
 	text-align: center;
 	color: #000;
 
