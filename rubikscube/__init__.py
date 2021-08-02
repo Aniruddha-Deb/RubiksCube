@@ -1,6 +1,6 @@
 from os import environ
 from flask import Flask, session
-from mathsolver import api, config
+from rubikscube import api, config
 
 def create_app():
     # setting static url path and folder in preferences doesn't work properly...

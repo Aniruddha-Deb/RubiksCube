@@ -1590,6 +1590,10 @@ ERNO.Cubelet = function( cube, cubeletId, colors ){
 	if( colors === undefined ) colors = [ W, O,  ,  , G, ];
 	this.faces = [];
 
+	// CUSTOMIZATION: let's initialize the cube so that all the colors
+	// are initially hidden.
+	this.hidden = true;
+
 
 	//  Now let's map one color per side based on colors[].
 	//  Undefined values are allowed (and anticipated).
@@ -1613,6 +1617,7 @@ ERNO.Cubelet = function( cube, cubeletId, colors ){
 
 		this.faces[ i ] = {};
 		this.faces[ i ].id = i;
+		this.faces[ i ].dispcolor = this.hidden ? ERNO.GRAY : color;
 		this.faces[ i ].color = color;
 		
 
@@ -5359,7 +5364,8 @@ ERNO.renderers.CSS3DCubelet = (function(){
 
 				var stickerElement = document.createElement( 'div' );
 				stickerElement.classList.add( 'sticker' );
-				stickerElement.classList.add( face.color.name );		
+				stickerElement.classList.add( face.dispcolor.name );
+				stickerElement.setAttribute( "color", face.color.name );		
 				face.element.appendChild( stickerElement );
 
 
@@ -5367,10 +5373,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				//  If this happens to be our logo-bearing Cubelet
 				//  we had better attach the logo to it!
 
-				if( cubelet.isStickerCubelet ){
+				//if( cubelet.isStickerCubelet ){
 
-					stickerElement.classList.add( 'stickerLogo' )
-				}
+					//stickerElement.classList.add( 'stickerLogo' )
+				//}
 
 
 
@@ -5419,7 +5425,6 @@ ERNO.renderers.CSS3DCubelet.methods = (function(){
 	function hideItem( item ){	
 		item.style.display = 'none';
 	} 
-
 
 	return {
 
@@ -5517,6 +5522,27 @@ ERNO.renderers.CSS3DCubelet.methods = (function(){
 
 			this.getFaceElements( ' .sticker' ).forEach( showItem );
 			this.showingStickers = true;
+		},
+		showColors: function(){
+
+			this.getFaceElements( ' .sticker' ).forEach( (sticker) => {
+				sticker.classList.remove( "gray" );
+				sticker.classList.add( sticker.getAttribute( "color" ) );
+			});
+			this.hidden = false;
+		},
+		hideColors: function(){
+
+			this.getFaceElements( ' .sticker' ).forEach( (sticker) => {
+				sticker.classList.remove( sticker.getAttribute( "color" ) );
+				sticker.classList.add( "gray" );
+			});
+			this.hidden = true;
+		},
+		toggleColors: function() {
+
+			if (this.hidden) this.showColors();
+			else this.hideColors();
 		},
 		showWireframes: function(){
 
