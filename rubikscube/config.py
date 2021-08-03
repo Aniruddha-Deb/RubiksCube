@@ -1,19 +1,18 @@
 from os import environ, path
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-class Config():
+print(load_dotenv())
+print("dotenv loaded")
+
+class Config(object):
     TESTING = False
     SECRET_KEY = environ.get('SECRET_KEY')
+    BOT_TOKEN = environ.get('BOT_TOKEN')
 
 class ProductionConfig(Config):
-    API_URL_PREFIX = '/MathSolver/api'
     STATIC_FOLDER = None
     STATIC_URL_PATH = None
-
-class DevelopmentConfig(Config):
-    API_URL_PREFIX = '/api'
 
 class TestingConfig(Config):
     TESTING = True
 
-load_dotenv()
