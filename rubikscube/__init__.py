@@ -24,7 +24,7 @@ def create_app():
     #app.register_blueprint(api.bp, url_prefix=config_obj.API_URL_PREFIX)
 
     socketio.init_app(app)
-    socketio.on_namespace(events.BotNamespace('/bot'))
-    socketio.on_namespace(events.FrontendNamespace('/frontend'))
+    socketio.on_namespace(events.BotNamespace(app, '/bot'))
+    socketio.on_namespace(events.FrontendNamespace(app, '/frontend'))
 
     return app
