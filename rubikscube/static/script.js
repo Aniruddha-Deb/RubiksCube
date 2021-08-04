@@ -7,5 +7,9 @@ function onLoad() {
 		evt.cubelet.toggleColors();
 	})
 
-	// connect to 
+	// connect to server
+	const socket = io("http://localhost:5000/frontend");
+	socket.on("connect", () => {
+		console.log("Connected to server as frontend")
+	})
 }

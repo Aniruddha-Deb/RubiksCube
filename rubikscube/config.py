@@ -1,9 +1,6 @@
 from os import environ, path
 from dotenv import load_dotenv, find_dotenv
 
-print(load_dotenv())
-print("dotenv loaded")
-
 class Config(object):
     TESTING = False
     SECRET_KEY = environ.get('SECRET_KEY')
@@ -16,3 +13,4 @@ class ProductionConfig(Config):
 class TestingConfig(Config):
     TESTING = True
 
+load_dotenv()
