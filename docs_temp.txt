@@ -1,0 +1,36 @@
+qcode is supposed to be a one, two or three character string containing 
+the colors of the question. No association with question topics yet. The
+colors are:
+
+R: Red
+G: Green
+W: White
+Y: Yellow
+B: Blue
+O: Orange
+
+so an orange and blue edge would be OB or BO, and a white-orange-blue edge
+would be WOB or WBO or BOW or any of the 6 combinations. This will be taken
+care of in the loader (which would search for a string with all permutations)
+
+Remember that qcodes are completely initialization dependent, and will 
+work with both a western and a japanese color scheme on the cube. For 
+this quiz however, we're going with a western color scheme, so the color
+scheme is:
+
+  B
+O W R Y
+  G 
+
+Blue-Green, Orange-Red and White-Yellow are the opposite sides, so a 
+white-yellow edge, or a blue-green-white corner are impossible.
+
+Questions are loaded as plaintext, and there's a markdown renderer on 
+the frontend that renders them. Will need to think a bit more for 
+embeds and videos and images, because I'm not sure how to deal with them.
+Static images will have to suffice for now, and maybe the same for audio/
+video as well.
+
+I don't want to save the question itself as a video or a slide, because 
+that sucks. Maybe I'll need to get comfy with a presentation framework
+on the frontend (reveal.js) for better results.
