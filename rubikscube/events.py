@@ -36,12 +36,11 @@ class BotNamespace(Namespace):
             tno: #,
             discord_id: <id>,
             pounce: <pounce text>
-
         }
         """
         print("Pounce by ", data)
-        # interface with quiz model
-        emit('pounce', data, namespace='/frontend', to=self.app.frontend_sid)
+        self.app.quiz.teams[data['tno']].register_pounce(data)
+        emit('pounce', data['tno'], namespace='/frontend', to=self.app.frontend_sid)
 
     def on_disconnect(self):
         print("Bot Disconnected")
@@ -78,8 +77,12 @@ class FrontendNamespace(Namespace):
     # request, whereas I'll need to write a blueprint and do all that stuff when
     # the socket is already established, which is just extra work
     def on_get_question(self, data):
-        pass
-
+        """
+        data format: {
+            qcode: <qcode>
+        }
+        """
+        emit('question', json.dumps(self.app.quiz.get_question(data['qcode'])), namespace='/frontend')
 
     def on_disconnect(self):
         print("Frontend Disconnected")

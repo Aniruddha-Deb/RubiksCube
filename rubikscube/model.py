@@ -7,6 +7,7 @@ class Quiz:
         self.question_file = question_file
         self.teams = {}
         self.questions = {}
+        self.in_question = False
 
         self.load_questions(question_file)
 
@@ -51,10 +52,15 @@ class Team:
         self.curr_score = 0
         self.scores = []
         self.pounced = False
+        self.curr_pounce = ""
         self.bounce = False
 
         for member in t_members:
             self.members.append(Member(self, member))
+
+    def register_pounce(self, data):
+        self.pounced = True
+        self.curr_pounce = data['pounce']
 
 class Member:
 

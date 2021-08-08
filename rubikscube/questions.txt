@@ -12,22 +12,34 @@ R answer here
 O
 ---
 
-O question here
+This sports series originally started on a YouTube channel, where two dutch brothers would _parody_ various other leagues and international sports series. Soon, the brothers got international acclaim for this, and this sports series started to be streamed on HBO and ESPN.
+
+ID the sports series, whose logo is shown here.
+
+![q_img](img/mbl_q.png)
 
 -------------------
 
-O answer here
+## Marbula One
+
+![a_img](img/marbula_one.png)
 
 ################################################################################
 
 Y
 ---
 
-Y question here
+Because of something that happened recently, the artist of this (in)famous song released a limited and numbered 7” blue vinyl of the song. There are 2500 of them and the artist would be signing them all.
+
+ID the song, as well as the event that occured.
+
+![q_img](img/nggyu_q.jpg)
 
 -------------------
 
-Y answer here
+### Never gonna give you up reached 1Bn views
+
+![a_img](img/nggyu_q.jpg)
 
 ################################################################################
 
