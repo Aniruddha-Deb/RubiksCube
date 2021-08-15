@@ -17,6 +17,8 @@ def create_app():
         config_obj = config.ProductionConfig()
         print("Loaded production config")
 
+    print(config_obj.__dict__)
+
     # setting static url path and folder in preferences doesn't work properly...
     # this is anyway set to None if the production env is loaded, so it's ok.
     app = RubiksApp(__name__, config_obj, static_url_path='', static_folder='static/')

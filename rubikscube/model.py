@@ -17,7 +17,6 @@ class Quiz:
         with open(question_file, 'r') as questions_raw:
             for l in questions_raw:
                 if re.match(r'[#]{15}[#]+', l):
-                    print(qbuffer)
                     question = Question(qbuffer)
                     if question.code in self.questions:
                         raise Exception("Loaded two questions with the same key. Ignoring second one")
@@ -36,38 +35,28 @@ class Quiz:
         self.questions[qcode].attempted = True
 
     def add_team(self, team):
-        self.teams[team.id] = team
+        self.teams[str(team.id)] = team
 
     def remove_team(self, tno):
-        self.teams.pop(tno, None)
+        self.teams.pop(str(tno), None)
 
     def get_team(self, tno):
-        return self.teams[tno]
+        return self.teams[str(tno)]
 
 class Team:
 
     def __init__(self, tno, t_members):
         self.id = tno
-        self.members = []
+        self.members = t_members
         self.curr_score = 0
         self.scores = []
         self.pounced = False
         self.curr_pounce = ""
         self.bounce = False
 
-        for member in t_members:
-            self.members.append(Member(self, member))
-
     def register_pounce(self, data):
         self.pounced = True
-        self.curr_pounce = data['pounce']
-
-class Member:
-
-    def __init__(self, team, tmember):
-        self.team = team
-        self.name = tmember['name']
-        self.discord_id = tmember['discord_id']
+        self.curr_pounce = data
 
 class Question:
 

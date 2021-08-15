@@ -1,6 +1,7 @@
 from flask_socketio import Namespace, emit
 from flask import request
 import json
+from rubikscube.model import Team
 
 class BotNamespace(Namespace):
 
@@ -18,17 +19,16 @@ class BotNamespace(Namespace):
         Team data is in JSON: [
         {
             tno: 1,
-            members: [
-                {name: 'Name', discord_id: 'Discord ID'}, ...
-            ]
+            members: [ "discord_id_1", "discord_id_2", ...]
         },
         {
             ...
         }]
         """
         teams = json.loads(data)
+        print(data)
         for team in teams:
-            self.app.add_team(Team(team['tno'], team['members']))
+            self.app.quiz.add_team(Team(team['tno'], team['members']))
 
     def on_pounce(self, data):
         """
@@ -39,8 +39,19 @@ class BotNamespace(Namespace):
         }
         """
         print("Pounce by ", data)
-        self.app.quiz.teams[data['tno']].register_pounce(data)
-        emit('pounce', data['tno'], namespace='/frontend', to=self.app.frontend_sid)
+        pounce = json.loads(data)
+        self.app.quiz.get_team(pounce['tno']).register_pounce(pounce['pounce'])
+        if self.app.frontend_sid:
+            emit('pounce', pounce['tno'], namespace='/frontend', to=self.app.frontend_sid)
+
+    def on_pounce_open(self, data):
+
+        pass
+
+    def on_pounce_close(self, data):
+        print("Pounces:")
+        for team in self.app.quiz.teams:
+            print(f"{team}: {self.app.quiz.teams[team].curr_pounce}")
 
     def on_disconnect(self):
         print("Bot Disconnected")
