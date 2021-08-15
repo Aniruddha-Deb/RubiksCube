@@ -44,15 +44,6 @@ class BotNamespace(Namespace):
         if self.app.frontend_sid:
             emit('pounce', pounce['tno'], namespace='/frontend', to=self.app.frontend_sid)
 
-    def on_pounce_open(self, data):
-
-        pass
-
-    def on_pounce_close(self, data):
-        print("Pounces:")
-        for team in self.app.quiz.teams:
-            print(f"{team}: {self.app.quiz.teams[team].curr_pounce}")
-
     def on_disconnect(self):
         print("Bot Disconnected")
 
@@ -68,32 +59,56 @@ class FrontendNamespace(Namespace):
         emit('num_teams', self.app.num_teams)
 
     def on_pounce_open(self):
-        # TODO implement
-        pass
+        self.app.quiz.pounce_open = True
+        for team in self.app.quiz.teams:
+            self.app.quiz.teams[team].curr_pounce = ""
+            self.app.quiz.teams[team].pounced = False
+            self.app.quiz.teams[team].bounce = False
+        if self.app.bot_sid:
+            emit('pounce_open', "", namespace='/bot', to=self.app.bot_sid)
 
     def on_pounce_close(self):
-        # TODO implement
-        pass
+        self.app.quiz.pounce_open = False
+        if self.app.bot_sid:
+            emit('pounce_close', "", namespace='/bot', to=self.app.bot_sid)
 
-    def on_score_pounce(self):
-        # TODO implement
-        pass
-
-    def on_score_bounce(self):
-        # TODO implement
-        pass
-
-    # Should this be a HTTP request rather than something on WebSocket?
-    # Arguments for the HTTP req are that it's more naturally framed as a get 
-    # request, whereas I'll need to write a blueprint and do all that stuff when
-    # the socket is already established, which is just extra work
-    def on_get_question(self, data):
+    def on_score(self, data):
         """
-        data format: {
-            qcode: <qcode>
+        {
+            tno: 1,
+            curr_score: 10,
+            new_score: 20,
+            score_delta: 10
         }
         """
-        emit('question', json.dumps(self.app.quiz.get_question(data['qcode'])), namespace='/frontend')
+        score_data = json.loads(data)
+        team = self.app.quiz.get_team(score_data['tno'])
+        if score_data['curr_score'] == team.curr_score:
+            team.scores.append(score_data['new_score'])
+            team.new_score = score_data['new_score']
+        else:
+            print("CRITICAL: scores do not match")
+
+    def on_get_question(self, data):
+        """
+        incoming request: just qcode
+        return data format: {
+            qcode: <qcode>,
+            question: <question>,
+            answer: <answer>
+        }
+        """
+        question = self.app.quiz.get_question(data)
+        if not question.attempted:
+            response = {
+                'qcode': question.code,
+                'question': question.question,
+                'answer': question.answer
+            }
+            emit('question', json.dumps(response), namespace='/frontend')
+        else:
+            emit('question', "ATTEMPTED", namespace='/frontend')
+
 
     def on_disconnect(self):
         print("Frontend Disconnected")

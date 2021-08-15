@@ -7,7 +7,7 @@ class Quiz:
         self.question_file = question_file
         self.teams = {}
         self.questions = {}
-        self.in_question = False
+        self.pounce_open = False
 
         self.load_questions(question_file)
 
