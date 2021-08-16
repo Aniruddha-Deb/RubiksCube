@@ -45,11 +45,11 @@ class BotNamespace(Namespace):
         if self.app.frontend_sid:
             emit('pounce', pounce['tno'], namespace='/frontend', to=self.app.frontend_sid)
 
-    def on_pounce_opened(self, data):
+    def on_pounce_opened(self):
         if self.app.frontend_sid:
             emit('pounce_opened', namespace='/frontend', to=self.app.frontend_sid)
 
-    def on_pounce_closed(self, data):
+    def on_pounce_closed(self):
         if self.app.frontend_sid:
             emit('pounce_closed', namespace='/frontend', to=self.app.frontend_sid)
 
@@ -68,26 +68,31 @@ class FrontendNamespace(Namespace):
         emit('num_teams', self.app.num_teams)
 
     def on_pounce_open(self):
-        self.app.quiz.pounce_open = True
-        for team in self.app.quiz.teams:
-            self.app.quiz.teams[team].curr_pounce = ""
-            self.app.quiz.teams[team].pounced = False
-            self.app.quiz.teams[team].bounce = False
-        if self.app.bot_sid and self.app.bot_teams_initialized:
-            emit('pounce_open', "", namespace='/bot', to=self.app.bot_sid)
+        if self.app.quiz.pounce_open:
+            emit('pounce_opened', "ERROR: Pounce is already open")
         elif not self.app.bot_sid:
             emit('pounce_opened', "ERROR: Bot has not connected", namespace='/frontend')
-        elif not self.app.bot_teams_initialized:
+        elif not self.app.quiz.bot_teams_initialized:
             emit('pounce_opened', "ERROR: Bot has not initialized teams", namespace='/frontend')
+        else:
+            self.app.quiz.pounce_open = True
+            for team in self.app.quiz.teams:
+                self.app.quiz.teams[team].curr_pounce = ""
+                self.app.quiz.teams[team].pounced = False
+                self.app.quiz.teams[team].bounce = False
+
+            emit('pounce_open', "", namespace='/bot', to=self.app.bot_sid)
 
     def on_pounce_close(self):
-        self.app.quiz.pounce_open = False
-        if self.app.bot_sid and self.app.bot_teams_initialized:
-            emit('pounce_open', "", namespace='/bot', to=self.app.bot_sid)
+        if not self.app.quiz.pounce_open:
+            emit('pounce_closed', "ERROR: no pounce window open")
         elif not self.app.bot_sid:
-            emit('pounce_opened', "ERROR: Bot has not connected", namespace='/frontend')
-        elif not self.app.bot_teams_initialized:
-            emit('pounce_opened', "ERROR: Bot has not initialized teams", namespace='/frontend')
+            emit('pounce_closed', "ERROR: Bot has not connected", namespace='/frontend')
+        elif not self.app.quiz.bot_teams_initialized:
+            emit('pounce_closed', "ERROR: Bot has not initialized teams", namespace='/frontend')
+        else:
+            self.app.quiz.pounce_open = False
+            emit('pounce_close', "", namespace='/bot', to=self.app.bot_sid)
 
     def on_score(self, data):
         """

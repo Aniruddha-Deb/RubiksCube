@@ -18,11 +18,11 @@
 			});
 
 			socket.on('pounce_opened', (data) => {
-				console.log("Successfully opened pounce");
+				console.log(data);
 			});
 
 			socket.on('pounce_closed', (data) => {
-				console.log("Successfully closed pounce");
+				console.log(data);
 			});
 
 			socket.on('question', (data) => {
