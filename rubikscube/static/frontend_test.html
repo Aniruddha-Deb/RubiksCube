@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Frontend test</title>
+	<script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+
+
+	<script type="text/javascript">
+		const socket = io("http://localhost:5000/frontend");
+		function onLoad() {
+			socket.on("connect", () => {
+				console.log("Connected to server as frontend");
+			});
+
+			socket.on('pounce', (data) => {
+				console.log(data);
+			});
+
+			socket.on('pounce_opened', (data) => {
+				console.log("Successfully opened pounce");
+			});
+
+			socket.on('pounce_closed', (data) => {
+				console.log("Successfully closed pounce");
+			});
+
+			socket.on('question', (data) => {
+				console.log(data);				
+			});
+		}
+
+		function get_question() {
+			qcode = document.getElementById('qcode').value;
+			socket.emit('get_question', qcode);
+		}
+
+		function open_pounce() {
+			socket.emit('pounce_open');
+		}
+		function close_pounce() {
+			socket.emit('pounce_close');
+		}
+	</script>
+</head>
+<body onload="onLoad()">
+	<input type="text" id="qcode" name="id">
+	<button onclick="get_question()">Get Question</button>
+	<button onclick="open_pounce()">pounce open</button>
+	<button onclick="close_pounce()">pounce close</button>
+</body>
+</html>

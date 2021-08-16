@@ -5,14 +5,33 @@ html, body {
 	background-image: radial-gradient(#1e1e21, #161619);
 }
 
+.hidden {
+	display: none;
+}
+
+.presentation {
+	height: 80vh;
+	min-height: 80vh;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 500;
+	background-color: black;
+}
+
 .cube-frame {
 	height: 80vh; 
 	min-height: 80vh;
 }
 
 .scoreboard {
-	height: 20vh;
-	min-height: 20vh;
+	position: fixed;
+	width: 100%;
+	min-width: 100%;
+	bottom: 0px;
+	left: 0px;
+	height: 15vh;
+	min-height: 15vh;
 }
 
 .scorecard {
@@ -31,4 +50,22 @@ html, body {
 	font-size: 30px;
 	color: #ffffff;
 	background-color: #4fb96f;
+}
+
+.pounce-notif {
+	position: fixed;
+	width: 100%;
+	top: 80vh;
+	height: 5vh;
+	min-height: 5vh;
+}
+
+.timer {
+	position: absolute;
+	z-index: 1000;
+	top: 20px;
+	right: 20px;
+	width: 100px;
+	height: 50px;
+	background-color: red;
 }

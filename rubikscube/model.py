@@ -8,6 +8,7 @@ class Quiz:
         self.teams = {}
         self.questions = {}
         self.pounce_open = False
+        self.bot_teams_initialized = False
 
         self.load_questions(question_file)
 
@@ -28,7 +29,10 @@ class Quiz:
 
     def get_question(self, qcode):
         qcode = ''.join(sorted(qcode))
-        return self.questions[qcode]
+        if qcode in self.questions:
+            return self.questions[qcode]
+        else:
+            return None
 
     def attempted_question(self, qcode):
         qcode = ''.join(sorted(qcode))

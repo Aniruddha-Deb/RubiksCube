@@ -25,6 +25,7 @@ class BotNamespace(Namespace):
             ...
         }]
         """
+        self.app.quiz.bot_teams_initialized = True
         teams = json.loads(data)
         print(data)
         for team in teams:
@@ -43,6 +44,14 @@ class BotNamespace(Namespace):
         self.app.quiz.get_team(pounce['tno']).register_pounce(pounce['pounce'])
         if self.app.frontend_sid:
             emit('pounce', pounce['tno'], namespace='/frontend', to=self.app.frontend_sid)
+
+    def on_pounce_opened(self, data):
+        if self.app.frontend_sid:
+            emit('pounce_opened', namespace='/frontend', to=self.app.frontend_sid)
+
+    def on_pounce_closed(self, data):
+        if self.app.frontend_sid:
+            emit('pounce_closed', namespace='/frontend', to=self.app.frontend_sid)
 
     def on_disconnect(self):
         print("Bot Disconnected")
@@ -64,13 +73,21 @@ class FrontendNamespace(Namespace):
             self.app.quiz.teams[team].curr_pounce = ""
             self.app.quiz.teams[team].pounced = False
             self.app.quiz.teams[team].bounce = False
-        if self.app.bot_sid:
+        if self.app.bot_sid and self.app.bot_teams_initialized:
             emit('pounce_open', "", namespace='/bot', to=self.app.bot_sid)
+        elif not self.app.bot_sid:
+            emit('pounce_opened', "ERROR: Bot has not connected", namespace='/frontend')
+        elif not self.app.bot_teams_initialized:
+            emit('pounce_opened', "ERROR: Bot has not initialized teams", namespace='/frontend')
 
     def on_pounce_close(self):
         self.app.quiz.pounce_open = False
-        if self.app.bot_sid:
-            emit('pounce_close', "", namespace='/bot', to=self.app.bot_sid)
+        if self.app.bot_sid and self.app.bot_teams_initialized:
+            emit('pounce_open', "", namespace='/bot', to=self.app.bot_sid)
+        elif not self.app.bot_sid:
+            emit('pounce_opened', "ERROR: Bot has not connected", namespace='/frontend')
+        elif not self.app.bot_teams_initialized:
+            emit('pounce_opened', "ERROR: Bot has not initialized teams", namespace='/frontend')
 
     def on_score(self, data):
         """
@@ -99,16 +116,16 @@ class FrontendNamespace(Namespace):
         }
         """
         question = self.app.quiz.get_question(data)
-        if not question.attempted:
+        if question is None:
+            emit('question', "ERROR: Question with given key does not exist", namespace='/frontend')
+        else:
             response = {
                 'qcode': question.code,
                 'question': question.question,
-                'answer': question.answer
+                'answer': question.answer,
+                'attempted': question.attempted
             }
             emit('question', json.dumps(response), namespace='/frontend')
-        else:
-            emit('question', "ATTEMPTED", namespace='/frontend')
-
 
     def on_disconnect(self):
         print("Frontend Disconnected")

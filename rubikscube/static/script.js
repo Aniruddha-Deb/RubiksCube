@@ -1,5 +1,5 @@
 cube = new ERNO.Cube();
-
+/*
 class Quiz {
 
 	constructor(num_teams) {
@@ -28,7 +28,7 @@ class Team {
 class SocketEventHandler {
 
 }
-
+*/
 function onLoad() {
 	document.getElementById("cube").appendChild(cube.domElement);
 
@@ -36,6 +36,7 @@ function onLoad() {
 		evt.cubelet.toggleColors();
 	})
 
+	/*
 	// connect to server
 	const socket = io("http://localhost:5000/frontend");
 	socket.on("connect", () => {
@@ -44,7 +45,5 @@ function onLoad() {
 
 	socket.on('pounce', (data) => {
 		console.log(data);
-	});
-
-	socket
+	});*/
 }
