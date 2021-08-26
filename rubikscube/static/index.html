@@ -6,6 +6,7 @@
 	<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
 	<script charset="utf-8" src="https://cdn.rawgit.com/mrdoob/three.js/r84/examples/js/renderers/CSS3DRenderer.js"></script>
 	<script charset="utf-8" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+	<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.2/marked.min.js"></script>
 	<script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
 	<title>Rubik's Cube</title>
 	<script charset="utf-8" src="cuber.js"></script>
@@ -16,6 +17,10 @@
 </head>
 <body onload="onLoad()">
 	<div id="cube" class="cube-frame">
+	</div>
+	<div class="presentation hidden" id="presentation">
+		<div class="markdown" id="question"></div>
+		<button onclick="hidePresentation()">hide presentation</button>
 	</div>
 	<div id="pounce-notif" class="pounce-notif hidden">Pounce is Open</div>
 	<div id="scoreboard" class="scoreboard row">

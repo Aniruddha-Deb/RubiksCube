@@ -16,13 +16,13 @@ This sports series originally started on a YouTube channel, where two dutch brot
 
 ID the sports series, whose logo is shown here.
 
-![q_img](img/mbl_q.png)
+<img src="img/mbl_q.png" class="q-img q-img-centered">
 
 -------------------
 
 ## Marbula One
 
-![a_img](img/marbula_one.png)
+<img src="img/marbula_one.png" class="q-img q-img-centered">
 
 ################################################################################
 
@@ -33,13 +33,13 @@ Because of something that happened recently, the artist of this (in)famous song 
 
 ID the song, as well as the event that occured.
 
-![q_img](img/nggyu_q.jpg)
+<img src="img/nggyu_q.jpeg" class="q-img q-img-centered">
 
 -------------------
 
 ### Never gonna give you up reached 1Bn views
 
-![a_img](img/nggyu_q.jpg)
+<img src="img/nggyu.jpeg" class="q-img q-img-centered">
 
 ################################################################################
 

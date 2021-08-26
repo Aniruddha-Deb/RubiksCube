@@ -1891,6 +1891,21 @@ ERNO.extend( ERNO.Cubelet.prototype, {
 		return result
 	},
 
+	// Get Colours as a colour code; useful for sending a query to server for
+	// getting the question
+
+	getColorsAsQuestionCode: function() {
+
+		var qcode = "";
+		for (var i=0; i<6; i++) {
+			var color = this.faces[ i ].color.initial;
+			if (color !== 'X') {
+				qcode += color;
+			}
+		}
+		return qcode;
+	},
+
 
 	getRadius: function(){
 

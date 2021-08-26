@@ -117,7 +117,8 @@ class FrontendNamespace(Namespace):
         return data format: {
             qcode: <qcode>,
             question: <question>,
-            answer: <answer>
+            answer: <answer>,
+            attempted: <attempted>
         }
         """
         question = self.app.quiz.get_question(data)

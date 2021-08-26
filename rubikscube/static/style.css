@@ -9,9 +9,19 @@ html, body {
 	display: none;
 }
 
+.q-img {
+	width: 50%;
+}
+
+.q-img-centered {
+	display: block;
+	margin: 0 auto;
+}
+
 .presentation {
 	height: 80vh;
 	min-height: 80vh;
+	width: 100%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
