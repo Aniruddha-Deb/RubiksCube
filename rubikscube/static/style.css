@@ -60,6 +60,7 @@ html, body {
 	font-size: 30px;
 	color: #ffffff;
 	background-color: #4fb96f;
+	user-select: none;
 }
 
 .pounce-notif {

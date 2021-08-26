@@ -133,5 +133,8 @@ class FrontendNamespace(Namespace):
             }
             emit('question', json.dumps(response), namespace='/frontend')
 
+    def on_question_attempted(self, data):
+        self.app.quiz.get_question(data).attempted = True
+
     def on_disconnect(self):
         print("Frontend Disconnected")
