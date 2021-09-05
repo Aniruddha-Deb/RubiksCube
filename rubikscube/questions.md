@@ -1,35 +1,7 @@
 R
 ---
 
-R question here
-
--------------------
-
-R answer here
-
-################################################################################
-
-O
----
-
-This sports series originally started on a YouTube channel, where two dutch brothers would _parody_ various other leagues and international sports series. Soon, the brothers got international acclaim for this, and this sports series started to be streamed on HBO and ESPN.
-
-ID the sports series, whose logo is shown here.
-
-<img src="img/mbl_q.png" class="q-img q-img-centered">
-
--------------------
-
-## Marbula One
-
-<img src="img/marbula_one.png" class="q-img q-img-centered">
-
-################################################################################
-
-Y
----
-
-Because of something that happened recently, the artist of this (in)famous song released a limited and numbered 7” blue vinyl of the song. There are 2500 of them and the artist would be signing them all.
+Because of something that happened not-so-recently, the artist of this (in)famous song released a limited and numbered 7” blue vinyl of the song. There are 2500 of them and the artist would be signing them all.
 
 ID the song, as well as the event that occured.
 
@@ -43,14 +15,46 @@ ID the song, as well as the event that occured.
 
 ################################################################################
 
-G
+O
 ---
 
-G question here
+O Q here
 
 -------------------
 
-G answer here
+O A here
+
+################################################################################
+
+Y
+---
+
+Y Q here
+
+-------------------
+
+Y A here
+
+################################################################################
+
+G
+---
+
+It's absurd for a program to have superpowers, but the siblings X and Y have an easter egg, if not a superpower. When asked, X claims to have the Z superpower, whereas Y doesn't. As a result, when prompted for an easter egg, Y has a very different response when compared to X.
+
+ID X, Y, Z (3,3,4 split). Bonus points (+5) for explaining Y's easter egg, *only if* you get all of X, Y and Z.
+
+<img src="img/moo_q.png" class="q-img q-img-centered">
+
+-------------------
+
+## X = `apt-get`, Y = `aptitude` and Z = Super-Cow powers
+
+apt-get (advanced packaging tool) has **super-cow powers**, wheread aptitude does not. If you're on a debian-based machine, typing out `apt-get --help | grep -i cow` would tell you.
+
+*Bonus*: The easter egg is An elephant being eaten by a snake (from The Little Prince)
+
+<img src="img/moo.png" class="q-img q-img-centered">
 
 ################################################################################
 
@@ -79,11 +83,17 @@ W answer here
 WG
 ---
 
-WG question here
+In business, **X** has now become *genericised*, that is, the brand or company X is now synonymous with a certain action, such as 'googling' for search engines and 'combiflam' for paracetamol/ibuprofen. This is strange, as X is neither relevant nor holds significant market share in the industry in which it is currently genericised (they hold around 25% in a very competitive market). 
+
+X used to have a monopoly on the business, but they suffered a slow and painful decline, and in tech circles X is more popular for several other things, other than their main business.
+
+ID the company X
 
 -------------------
 
-WG answer here
+## Xerox Corporation
+
+In tech circles, they're more famous for Xerox PARC and conceiving the mouse/gui/other modern tech ideas.
 
 ################################################################################
 

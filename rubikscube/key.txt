@@ -1,1 +1,6 @@
-R - 
+W - Biz
+Y - Sci
+B - Math
+G - Electronics, Gadgets & Innovations
+O - Software Systems
+R - Pop culture & tech?

@@ -72,6 +72,10 @@ function hidePresentation() {
 	socket.emit("question_attempted", curr_q);
 }
 
+function showAnswer() {
+	console.log("TODO replace answers here");
+}
+
 
 function update_score(element,incr) {
 	var tno = parseInt(element.id[element.id.size()-1]); // can't even tell you how hacky this is.
@@ -79,7 +83,6 @@ function update_score(element,incr) {
 	var team = this.scoreboard.scorecards[tno];
 	team[0].innerText = team[1]+incr;
 	team[1] += incr;
-	return false; // blocks context menu if any
 }
 
 var socket = null;
@@ -106,8 +109,8 @@ function onLoad() {
 	})
 
 	socket.on('pounce', (data) => {
-		//var tno = parseInt(data);
-
+		var tno = parseInt(data);
+		console.log(tno);
 	});
 
 	socket.on('question', (data) => {
