@@ -20,6 +20,9 @@ class Scoreboard {
 		this.scorecards = {};
 		this.num_teams = num_teams;
 		this.populate_scorecards();
+		// forcing redraw
+		window.dispatchEvent(new Event('resize'));
+
 	}
 
 	populate_scorecards() {
@@ -41,6 +44,7 @@ class Scoreboard {
 				return false;
 			}
 		}
+
 	}
 
 	// TODO
@@ -93,11 +97,33 @@ function onLoad() {
 	document.getElementById("cube").appendChild(cube.domElement);
 	socket = io("http://localhost:5000/frontend");
 
+	var shiftDown = false;
+	document.addEventListener('keydown', (e) => {
+		if (e.shiftKey) {
+			shiftDown = true;
+			console.log("Shift down");
+		}
+	});
+	document.addEventListener('keyup', (e) => {
+		if (shiftDown = true) {
+			shiftDown = false;
+			console.log("Shift up");
+		}
+	});
+
 	cube.mouseInteraction.addEventListener('click', (evt) => {
-		evt.cubelet.showColors();
-		var qcode = evt.cubelet.getColorsAsQuestionCode();
-		curr_q = qcode;
-		socket.emit("get_question", qcode);
+		if (shiftDown) {
+			evt.cubelet.hideColors();
+			var qcode = evt.cubelet.getColorsAsQuestionCode();
+			socket.emit("reload_question", qcode);
+			console.log("Reloading question");
+		}
+		else {
+			evt.cubelet.showColors();
+			var qcode = evt.cubelet.getColorsAsQuestionCode();
+			curr_q = qcode;
+			socket.emit("get_question", qcode);
+		}
 	});
 
 	socket.on("connect", () => {

@@ -27,6 +27,22 @@ class Quiz:
                 else:
                     qbuffer = qbuffer + l
 
+    def reload_question(self, qcode, question_file):
+        qbuffer = ""
+        with open(question_file, 'r') as questions_raw:
+            for l in questions_raw:
+                if re.match(r'[#]{15}[#]+', l):
+                    question = Question(qbuffer)
+                    if question.code == qcode:
+                        self.questions[question.code].question = question.question
+                        self.questions[question.code].answer = question.answer
+                        self.questions[question.code].attempted = False
+                        break
+                    qbuffer = ""
+                else:
+                    qbuffer = qbuffer + l
+
+
     def get_question(self, qcode):
         qcode = ''.join(sorted(qcode))
         if qcode in self.questions:

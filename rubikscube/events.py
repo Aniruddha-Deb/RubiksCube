@@ -94,6 +94,10 @@ class FrontendNamespace(Namespace):
             self.app.quiz.pounce_open = False
             emit('pounce_close', "", namespace='/bot', to=self.app.bot_sid)
 
+    def on_reload_question(self, qcode):
+        self.app.quiz.reload_question(qcode, self.app.question_file)
+        emit('reload_questions', "")
+
     def on_score(self, data):
         """
         {
