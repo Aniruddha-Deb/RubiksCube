@@ -29,6 +29,7 @@ class Quiz:
 
     def reload_question(self, qcode, question_file):
         qbuffer = ""
+        qcode = ''.join(sorted(qcode.strip()))
         with open(question_file, 'r') as questions_raw:
             for l in questions_raw:
                 if re.match(r'[#]{15}[#]+', l):

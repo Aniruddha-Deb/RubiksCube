@@ -52,7 +52,7 @@ html, body {
 
 .scorecard-header {
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	color: #ffffff;
 	background-color: #2f8b4b;
 }
@@ -65,12 +65,33 @@ html, body {
 	user-select: none;
 }
 
+.scorecard-header-pounce-open {
+	background-color: #0a3dbf;
+}
+
+.scorecard-score-pounce-open {
+	background-color: #2b72ed;
+}
+
+.scorecard-header-pounced {
+	background-color: #d49b22;
+}
+
+.scorecard-score-pounced {
+	background-color: #f0bc2e;
+}
+
+
 .pounce-notif {
 	position: fixed;
 	width: 100%;
 	top: 80vh;
 	height: 5vh;
 	min-height: 5vh;
+	background-color: #082b85;
+	color: #eeeeee;
+	text-align: center;
+	font-size: 20px;
 }
 
 .timer {

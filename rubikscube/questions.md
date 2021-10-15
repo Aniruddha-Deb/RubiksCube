@@ -313,3 +313,14 @@ YBO question here
 YBO answer here
 
 ################################################################################
+
+Key:
+White - biz
+Blue - Science
+Orange - Math
+Green - Tech
+Red - Engineering
+Yellow - Software
+
+anything below here is not going to be picked up by the question picker, so feel 
+free to write comments.

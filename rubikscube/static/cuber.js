@@ -1592,7 +1592,7 @@ ERNO.Cubelet = function( cube, cubeletId, colors ){
 
 	// CUSTOMIZATION: let's initialize the cube so that all the colors
 	// are initially hidden.
-	this.hidden = true;
+	this.hidden = false;
 
 
 	//  Now let's map one color per side based on colors[].
