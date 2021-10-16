@@ -3,27 +3,21 @@ cube = new ERNO.Cube();
 class Quiz {
 
 	constructor(num_teams) {
-		this.num_teams = num_teams;
-		this.teams = [];
-		this.pounce_open = false;
-
-		for (var i = 0; i < num_teams; i++) {
-			this.teams.push(Team(i+1));
-		}
-	}
-}
-
-class Scoreboard {
-
-	constructor(num_teams) {
 		this.scoreboard = document.getElementById("scoreboard");
+		this.timer = new Timer();
 		this.teams = {};
-		this.scorecards = {}; // TODO remove if not required
 		this.num_teams = num_teams;
 		this.populate_scorecards();
 		// forcing redraw
 		window.dispatchEvent(new Event('resize'));
 
+		this.curr_q_code = null;
+		this.curr_q = null;
+		this.curr_q_ans = null;
+
+		this.showing_q = false;
+		this.showing_a = false;
+		this.pounce_open = false;
 	}
 
 	populate_scorecards() {
@@ -36,26 +30,116 @@ class Scoreboard {
 			this.scoreboard.innerHTML += scorecard;
 		}
 		for (var i=1; i<=this.num_teams; i++) {
-			this.scorecards[i] = [document.getElementById(`team-score-${i}`), 0, document.getElementById(`team-${i}`)];
-			this.scorecards[i][0].onclick = function() {
+			this.teams[i] = new Team(i,document.getElementById(`team-${i}`),document.getElementById(`team-score-${i}`))
+			this.teams[i].scorecard_score.onclick = function() {
 				update_score(this,5);
 			}
-			this.scorecards[i][0].oncontextmenu = function() {
+			this.teams[i].scorecard_score.oncontextmenu = function() {
 				update_score(this,-5);
 				return false;
 			}
-
-			this.teams[i] = new Team(i,document.getElementById(`team-${i}`),document.getElementById(`team-score-${i}`))
 		}
 
 	}
 
 	pounced(tno) {
-		this.teams[tno].set_pounced();
+		if (this.pounce_open) {
+			this.teams[tno].set_pounced();
+		}
 	}
 
 	reset_pounce(tno) {
-		this.teams[tno].reset_pounced();
+		if (!this.pounce_open) {
+			this.teams[tno].reset_pounced();			
+		}
+	}
+
+	open_pounce() {
+		this.pounce_open = true;
+		socket.emit("pounce_open");
+		for (let team in quiz.teams) {
+			quiz.teams[team].set_pounce_open();
+		}
+
+		document.getElementById('pounce-notif').classList.remove('hidden');
+	}
+
+	close_pounce() {
+		this.pounce_open = false;
+		socket.emit("pounce_close");
+		for (let team in quiz.teams) {
+			quiz.teams[team].reset_pounce_open();
+		}
+		document.getElementById('pounce-notif').classList.add('hidden');	
+	}
+
+	display_question(question) {
+		if (!this.showing_q && !this.showing_a) {
+			this.curr_q = question.question;
+			this.curr_q_ans = question.answer;
+			this.showing_q = true;
+			document.getElementById('question').innerHTML = marked(this.curr_q);
+			document.getElementById('presentation').classList.remove('hidden');
+
+			// set colors
+			var color_1 = document.getElementById('color-1');
+			var color_2 = document.getElementById('color-2');
+			var color_3 = document.getElementById('color-3');
+			color_1.classList.add(this.curr_q_code[0]);
+			if (this.curr_q_code.length > 1) {
+				color_2.classList.add(this.curr_q_code[1])
+				if (this.curr_q_code.length > 2) {
+					color_3.classList.add(this.curr_q_code[2]);
+				}
+				else {
+					color_3.classList.add('hidden');
+				}
+			}
+			else {
+				color_2.classList.add('hidden');
+			}
+
+			this.open_pounce();
+			this.timer.start_new_timer(15,null,this.close_pounce.bind(this));
+		}
+	}
+
+	display_question_answer() {
+		if (this.pounce_open) {
+			var r = confirm("Pounce will be closed. Continue without bounce?");
+			if (r) {
+				this.close_pounce();
+				this.display_question_answer();
+			}
+		}
+		else {
+			this.showing_q = false;
+			this.showing_a = true;
+			document.getElementById('question').innerHTML = marked(this.curr_q_ans);
+			this.timer.reset_timer();
+		}
+	}
+
+	return_to_cube() {
+		this.showing_a = false;
+		var color_1 = document.getElementById('color-1');
+		var color_2 = document.getElementById('color-2');
+		var color_3 = document.getElementById('color-3');
+		color_1.classList.remove(this.curr_q_code[0]);
+		if (this.curr_q_code.length > 1) {
+			color_2.classList.remove(this.curr_q_code[1])
+			if (this.curr_q_code.length > 2) {
+				color_3.classList.remove(this.curr_q_code[2]);
+			}
+			else {
+				color_3.classList.remove('hidden');
+			}
+		}
+		else {
+			color_2.classList.remove('hidden');
+		}
+		document.getElementById('presentation').classList.add('hidden');
+		socket.emit("question_attempted", this.curr_q_code);
 	}
 }
 
@@ -97,8 +181,8 @@ class Team {
 	}
 
 	reset() {
-		reset_pounced();
-		reset_pounce_open();
+		this.reset_pounced();
+		this.reset_pounce_open();
 	}
 
 	increment_score(val) {
@@ -112,52 +196,104 @@ class Team {
 	}
 }
 
-class SocketEventHandler {
+class Timer {
 
+	constructor() {
+		this.curr_time = 0; // time in seconds
+		this.ticking = false;
+		this.timer_div = document.getElementById('timer');
+
+		this.timer_loop = null;
+		this.tick_callback = null;
+		this.end_callback = null;
+	}
+
+	tick() {
+		if (this.ticking && this.curr_time > 0) {
+			console.log("Tick update");
+			this.timer_div.innerHTML = 
+					Math.floor(this.curr_time/60).toString().padStart(2,'0') 
+					+ ":" 
+					+ (this.curr_time%60).toString().padStart(2,'0');
+			this.curr_time -= 1;
+			typeof this.tick_callback === 'function' && this.tick_callback();
+		}
+		else if (this.curr_time === 0) {
+			console.log("Tick shutdown");
+			this.ticking = false;
+			this.timer_div.innerHTML = "00:00";
+			clearInterval(this.timer_loop);
+			typeof this.end_callback === 'function' && this.end_callback();
+		}
+	}
+
+	start_new_timer(duration, tick_callback, end_callback) {
+		this.curr_time = duration;
+		this.tick_callback = tick_callback;
+		this.end_callback = end_callback;
+		this.ticking = true;
+		this.timer_loop = setInterval(this.tick.bind(this), 1000);
+		this.timer_div.classList.remove('timer-inactive');
+		this.tick();
+	}
+
+	pause_play_timer() {
+		if (this.ticking) {
+			this.timer_div.classList.add('timer-paused');
+		}
+		else {
+			this.timer_div.classList.remove('timer-paused');
+		}
+		this.ticking = !this.ticking;
+	}
+
+	reset_timer() {
+		clearInterval(this.timer_loop);
+		this.curr_time = 0;
+		this.timer_div.innerHTML = "--:--";
+		this.timer_div.classList.add('timer-inactive');
+		this.timer_div.classList.remove('timer-paused');
+	}
 }
-
-function hidePresentation() {
-	document.getElementById('presentation').classList.add('hidden')
-	close_pounce();
-	socket.emit("question_attempted", curr_q);
-}
-
-function showAnswer() {
-	console.log("TODO replace answers here");
-}
-
 
 function update_score(element,incr) {
 	console.log(element.id);
 	var tno = parseInt(element.id.split("-")[2]);
 	console.log(tno);
-	var team = this.scoreboard.teams[tno];
+	var team = quiz.teams[tno];
 	if (team.pounced) {
 		team.reset_pounced(tno);
 	}
 	team.increment_score(incr);
 }
 
-function open_pounce() {
-	socket.emit("pounce_open");
-	for (let team in scoreboard.teams) {
-		scoreboard.teams[team].set_pounce_open();
+function timer_click() {
+	if (quiz.pounce_open && quiz.showing_q) {
+		quiz.timer.pause_play_timer();
 	}
-
-	document.getElementById('pounce-notif').classList.remove('hidden');
+	else if (!quiz.showing_q && !quiz.pounce_open) {
+		quiz.open_pounce();
+	}
 }
 
-function close_pounce() {
-	socket.emit("pounce_close");
-	for (let team in scoreboard.teams) {
-		scoreboard.teams[team].reset_pounce_open();
+function pounce_notif_click() {
+	if (quiz.pounce_open) {
+		quiz.close_pounce();
+		quiz.timer.reset_timer();
 	}
-	document.getElementById('pounce-notif').classList.add('hidden');	
+}
+
+function next() {
+	if (quiz.showing_q) {
+		quiz.display_question_answer();
+	}
+	else if (quiz.showing_a) {
+		quiz.return_to_cube();
+	}
 }
 
 var socket = null;
-var scoreboard = null;
-var curr_q = null;
+var quiz = null;
 
 function onLoad() {
 	document.getElementById("cube").appendChild(cube.domElement);
@@ -167,27 +303,24 @@ function onLoad() {
 	document.addEventListener('keydown', (e) => {
 		if (e.shiftKey) {
 			shiftDown = true;
-			console.log("Shift down");
 		}
 	});
 	document.addEventListener('keyup', (e) => {
 		if (shiftDown = true) {
 			shiftDown = false;
-			console.log("Shift up");
 		}
 	});
 
 	cube.mouseInteraction.addEventListener('click', (evt) => {
+		var qcode = evt.cubelet.getColorsAsQuestionCode();
 		if (shiftDown) {
 			evt.cubelet.showColors();
-			var qcode = evt.cubelet.getColorsAsQuestionCode();
 			socket.emit("reload_question", qcode);
 			console.log("Reloading question");
 		}
 		else {
 			evt.cubelet.hideColors();
-			var qcode = evt.cubelet.getColorsAsQuestionCode();
-			curr_q = qcode;
+			quiz.curr_q_code = qcode;
 			socket.emit("get_question", qcode);
 		}
 	});
@@ -197,23 +330,21 @@ function onLoad() {
 	});
 
 	socket.on("num_teams", (data) => {
-		scoreboard = new Scoreboard(parseInt(data));
+		quiz = new Quiz(parseInt(data));
+		console.log("Created quiz");
 	})
 
 	socket.on('pounce', (data) => {
 		// TODO add pounced class to team indicator
 		var tno = parseInt(data);
-		this.scoreboard.pounced(tno);
+		this.quiz.pounced(tno);
 	});
 
 	socket.on('question', (data) => {
 		const question = JSON.parse(data);
 		if (!question.attempted) {
 			// display question on frontend
-			document.getElementById('question').innerHTML = marked(question.question)
-			document.getElementById('presentation').classList.remove('hidden')
-
-			open_pounce();
+			quiz.display_question(question);
 		}
 	});
 }

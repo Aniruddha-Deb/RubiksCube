@@ -10,7 +10,10 @@ html, body {
 }
 
 .q-img {
-	width: 50%;
+	height: auto;
+	width: auto;
+	max-height: 600px;
+	object-fit: contain;
 }
 
 .q-img-centered {
@@ -27,8 +30,13 @@ html, body {
 	left: 0px;
 	z-index: 500;
 	padding: 20px;
-	background-color: black;
-	color: #dadada;
+	background-color: #121212;
+	color: #eeeeee;
+	overflow: scroll;
+}
+
+.markdown {
+	font-size: 20px;
 }
 
 .cube-frame {
@@ -38,10 +46,9 @@ html, body {
 
 .scoreboard {
 	position: fixed;
+	top: 85vh;
 	width: 100%;
 	min-width: 100%;
-	bottom: 0px;
-	left: 0px;
 	height: 15vh;
 	min-height: 15vh;
 }
@@ -60,9 +67,12 @@ html, body {
 .scorecard-score {
 	text-align: center;
 	font-size: 30px;
+	font-weight: bold;
 	color: #ffffff;
 	background-color: #4fb96f;
 	user-select: none;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 
 .scorecard-header-pounce-open {
@@ -81,6 +91,29 @@ html, body {
 	background-color: #f0bc2e;
 }
 
+.presentation-button {
+	background-color: #069414;
+	height: 20px;
+	width: 20px;
+	text-align: center;
+	border-radius: 4px;
+	float: right;
+}
+
+.R 	{ background: #DC422F;	}
+.W 	{ background: #F3F3F3;	}
+.B 	{ background: #3D81F6; 	}
+.G 	{ background: #009D54;	}
+.O 	{ background: #E87000; 	}
+.Y 	{ background: #F5B400; 	}
+
+.question-color {
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	border-radius: 5px;
+	display: inline-block;
+}
 
 .pounce-notif {
 	position: fixed;
@@ -99,7 +132,21 @@ html, body {
 	z-index: 1000;
 	top: 20px;
 	right: 20px;
-	width: 100px;
-	height: 50px;
-	background-color: red;
+	width: 90px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 25px;
+	text-align: center;
+	border-radius: 5px;
+	font-family: monospace;
+	color: #eeeeee;
+	background-color: #D93632;
+}
+
+.timer-paused {
+	background-color: #C982DB;	
+}
+
+.timer-inactive {
+	background-color: #62606b;
 }

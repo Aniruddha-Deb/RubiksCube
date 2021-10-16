@@ -19,14 +19,19 @@
 	<div id="cube" class="cube-frame">
 	</div>
 	<div class="presentation hidden" id="presentation">
+		<div id="color-panel">
+			<div id="color-1" class="question-color"></div>
+			<div id="color-2" class="question-color"></div>
+			<div id="color-3" class="question-color"></div>
+		</div>
 		<div class="markdown" id="question"></div>
-		<button onclick="hidePresentation()">hide presentation</button>
-		<button onclick="showAnswer()">show answer</button>
+		<div class="presentation-button" id="next-button" onclick="next()">→</div>
 	</div>
-	<div id="pounce-notif" class="pounce-notif hidden">Pounce is Open</div>
-	<div id="scoreboard" class="scoreboard row">
+	<div id="pounce-notif" class="pounce-notif hidden" onclick="pounce_notif_click()">Pounce is Open</div>
+	<div id="scoreboard-holder" class="scoreboard">
+		<div id="scoreboard" class="row justify-content-center"></div>
 	</div>
+	<div id="timer" class="timer timer-inactive" onclick="timer_click()">--:--</div>
 
-	<div id="timer" class="timer"></div>
 </body>
 </html>
