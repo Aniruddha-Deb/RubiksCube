@@ -5,13 +5,13 @@ Because of something that happened not-so-recently, the artist of this (in)famou
 
 ID the song, as well as the event that occured.
 
-<img src="img/nggyu_q.jpeg" class="q-img q-img-centered">
+<img src="static/img/nggyu_q.jpeg" class="q-img q-img-centered">
 
 -------------------
 
 ### Never gonna give you up reached 1Bn views
 
-<img src="img/nggyu.jpeg" class="q-img q-img-centered">
+<img src="static/img/nggyu.jpeg" class="q-img q-img-centered">
 
 ################################################################################
 
@@ -37,11 +37,17 @@ O A here
 Y
 ---
 
-Y Q here
+X (pictured below) is a crossword program with a text-based UI that can be run on the terminal.
+
+ID X, a portmanteau of "crossword" and a programming library that makes the program possible.
+
+X also refers to a certain set of words that one does not usually see in a crossword.
+
+<img src="static/img/crosswords.gif" class="q-img q-img-centered">
 
 -------------------
 
-Y A here
+# X = `cursewords`
 
 ################################################################################
 
@@ -52,28 +58,37 @@ It's absurd for a program to have superpowers, but the siblings X and Y have an 
 
 ID X, Y, Z (3,3,4 split). Bonus points (+5) for explaining Y's easter egg, *only if* you get all of X, Y and Z.
 
-<img src="img/moo_q.png" class="q-img q-img-centered">
+<img src="static/img/moo_q.png" class="q-img q-img-centered">
 
 -------------------
 
 ## X = `apt-get`, Y = `aptitude` and Z = Super-Cow powers
 
-apt-get (advanced packaging tool) has **super-cow powers**, wheread aptitude does not. If you're on a debian-based machine, typing out `apt-get --help | grep -i cow` would tell you.
+`apt-get` (advanced packaging tool) has **super-cow powers**, whereas aptitude does not. If you're on a debian-based machine, typing out `apt-get --help | grep -i cow` would tell you.
 
-*Bonus*: The easter egg is An elephant being eaten by a snake (from The Little Prince)
+*Bonus*: The easter egg is an elephant being eaten by a snake (from The Little Prince)
 
-<img src="img/moo.png" class="q-img q-img-centered">
+<img src="static/img/moo.png" class="q-img q-img-centered">
 
 ################################################################################
 
 B
 ---
 
-B question here
+Pictured below are *Spilomyia longicornis* and a vespid wasp. *S. longicornis* mimics the vespid wasp as a defense mechanism as vespid wasps have a string.
+
+However, this mimicry is not perfect and the two can be easily distinguished. What are these two notable features that the *S. longicornis* doesn't mimic?
+
+To make one of these differences less apparent, *S. longicornis* have come up with a rather dumb but effective strategy. What is this strategy?
+
+<img src="static/img/spilomyia_longicornis.jpg" class="q-img q-img-centered">
+<img src="static/img/vespid.jpg" class="q-img q-img-centered">
 
 -------------------
 
-B answer here
+Unlike the vespid wasps, they do not have a wasp waist and long black antennaes on their head.
+
+To make the lack of antennae less apparent, they wave their front legs above their heads.
 
 ################################################################################
 
@@ -141,22 +156,28 @@ WO answer here
 YG
 ---
 
-YG question here
+The following is a screenshot of Google Ngram viewer, showing the frequency of the word "beft" over time.
+Why is there a sharp decline in its frequency after the 1800s?
+
+<img src="static/img/beft.png" class="q-img q-img-centered">
 
 -------------------
 
-YG answer here
+# The long s, ſ, was interpreted as an f by Google's OCR
 
 ################################################################################
 
 YR
 ---
 
-YR question here
+An X attack is a sort of attack prevelant in distributed networks. The attack proceeds by the creation of multiple fake *identities* that are attached to a single *entity* which lets the attacker have a large level of control over the network.
+
+ID X, a book of the same name concerning such an identity creation in a completely different context.
 
 -------------------
 
-YR answer here
+# X = Sybil
+named after the 1973 book Sybil, about the medical treatment of a woman with dissociative identity disorder.
 
 ################################################################################
 
