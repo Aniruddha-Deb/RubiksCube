@@ -5,32 +5,24 @@ Because of something that happened not-so-recently, the artist of this (in)famou
 
 ID the song, as well as the event that occured.
 
-<img src="static/img/nggyu_q.jpeg" class="q-img q-img-centered">
+<img src="img/nggyu_q.jpeg" class="q-img q-img-centered">
 
 -------------------
 
 ### Never gonna give you up reached 1Bn views
 
-<img src="static/img/nggyu.jpeg" class="q-img q-img-centered">
+<img src="img/nggyu.jpeg" class="q-img q-img-centered">
 
 ################################################################################
 
 O
 ---
 
-# H1
-
-## H2
-
-### H3
-
-_italic_
-
-**bold**
+we messed up, but here's another question for you!
 
 -------------------
 
-O A here
+No answer unfortunately
 
 ################################################################################
 
@@ -43,7 +35,7 @@ ID X, a portmanteau of "crossword" and a programming library that makes the prog
 
 X also refers to a certain set of words that one does not usually see in a crossword.
 
-<img src="static/img/crosswords.gif" class="q-img q-img-centered">
+<img src="img/crosswords.gif" class="q-img q-img-centered">
 
 -------------------
 
@@ -58,7 +50,7 @@ It's absurd for a program to have superpowers, but the siblings X and Y have an 
 
 ID X, Y, Z (3,3,4 split). Bonus points (+5) for explaining Y's easter egg, *only if* you get all of X, Y and Z.
 
-<img src="static/img/moo_q.png" class="q-img q-img-centered">
+<img src="img/moo_q.png" class="q-img q-img-centered">
 
 -------------------
 
@@ -68,7 +60,7 @@ ID X, Y, Z (3,3,4 split). Bonus points (+5) for explaining Y's easter egg, *only
 
 *Bonus*: The easter egg is an elephant being eaten by a snake (from The Little Prince)
 
-<img src="static/img/moo.png" class="q-img q-img-centered">
+<img src="img/moo.png" class="q-img q-img-centered">
 
 ################################################################################
 
@@ -81,8 +73,8 @@ However, this mimicry is not perfect and the two can be easily distinguished. Wh
 
 To make one of these differences less apparent, *S. longicornis* have come up with a rather dumb but effective strategy. What is this strategy?
 
-<img src="static/img/spilomyia_longicornis.jpg" class="q-img q-img-centered">
-<img src="static/img/vespid.jpg" class="q-img q-img-centered">
+<img src="img/spilomyia_longicornis.jpg" class="q-img q-img-centered">
+<img src="img/vespid.jpg" class="q-img q-img-centered">
 
 -------------------
 
@@ -159,7 +151,7 @@ YG
 The following is a screenshot of Google Ngram viewer, showing the frequency of the word "beft" over time.
 Why is there a sharp decline in its frequency after the 1800s?
 
-<img src="static/img/beft.png" class="q-img q-img-centered">
+<img src="img/beft.png" class="q-img q-img-centered">
 
 -------------------
 

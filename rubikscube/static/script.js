@@ -100,7 +100,7 @@ class Quiz {
 			}
 
 			this.open_pounce();
-			this.timer.start_new_timer(15,null,this.close_pounce.bind(this));
+			this.timer.start_new_timer(60,null,this.close_pounce.bind(this));
 		}
 	}
 
