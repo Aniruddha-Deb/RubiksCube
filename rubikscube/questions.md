@@ -87,11 +87,15 @@ To make the lack of antennae less apparent, they wave their front legs above the
 W
 ---
 
-bippity boppity boop
+**X** is an american term for _a report, project, or anything else presented in a flashy way with little (or sometimes misleading) substance_. X is a cultural art form, but it acquired this derogatory meaning after drawn out peace-time treaty negotiations between the United States and Japan which had extended to 1960, and because Japan, in an effort "to shed its image as a global marauder" sent X to the U.S. after World War II to sow the seeds of goodwill.
+
+ID **X**.
 
 -------------------
 
-W answer here
+## Kabuki Dance
+
+<img src="img/kabuki.jpeg" class="q-img q-img-centered">
 
 ################################################################################
 
@@ -259,8 +263,7 @@ What was the original name?
 GO
 ---
 
-// hard to get turing directly from this info?
-
+<!--// hard to get turing directly from this info?-->
 What (who?) is the 2012 London olympic flame being passed over here?
 
 <img src="img/turing_q.jpeg" class="q-img q-img-centered">
