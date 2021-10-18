@@ -119,11 +119,13 @@ In tech circles, they're more famous for Xerox PARC and conceiving the mouse/gui
 WB
 ---
 
-WB question here
+X from farm animals was used for many years to treat Y and saved millions of lives, but it caused allergic reactions in many patients. The first synthetic version of X was produced in 1978 using E. coli bacteria. Eli Lilly went on in 1982 to sell the first commercially available X under the brand name `_______`.
+
+X was first used in Canada in 1922, and the scientists who first found and used X received a Nobel Prize for it. ID X, one of the most ubiquitous drugs in use today.
 
 -------------------
 
-WB answer here
+## Insulin
 
 ################################################################################
 
@@ -141,11 +143,17 @@ WR answer here
 WO
 ---
 
-WO question here
+The blue line in the following image represents the net value of a famous hedge fund run by nobel laureates. The hedge fund spectacularily crashed in 1996, leading to a dead period in algorithmic trading.
+
+ID the hedge fund in question, which proved to be _very short term_.
+
+<img src="img/LTCM_q.png" class="q-img q-img-centered"> 
 
 -------------------
 
-WO answer here
+## Long Term Capital Management
+
+<img src="img/LTCM.png" class="q-img q-img-centered">
 
 ################################################################################
 
