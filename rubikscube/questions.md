@@ -399,11 +399,15 @@ Its Wikipedia entry is pretty fun,
 YRB
 ---
 
-YRB question here
+Earlier this year, University of Minnesota was banned from contributing to the development of the Linux Kernel.
+
+What did the university's researchers do that lead to this?
+
+Their actions mostly went under the radar of the Linux community, however when it came to light it even started a discussion into the ethics of human experimentation and whether their actions could amounted to this.
 
 -------------------
 
-YRB answer here
+They submitted "hypocrite commits", where the patches fix small bugs while introducing larger bugs, for their research into Linux security.
 
 ################################################################################
 
