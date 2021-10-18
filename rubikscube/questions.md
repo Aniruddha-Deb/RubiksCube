@@ -35,30 +35,30 @@ What is the apt name given to this theorem?
 Y
 ---
 
-X (pictured below) is a crossword program with a text-based UI that can be run on the terminal.
+**X** (pictured below) is a crossword program with a text-based UI that can be run on the terminal.
 
-ID X, a portmanteau of "crossword" and a programming library that makes the program possible.
+ID **X**, a portmanteau of "crossword" and a programming library that makes the program possible.
 
-X also refers to a certain set of words that one does not usually see in a crossword.
+**X** also refers to a certain set of words that one does not usually see in a crossword.
 
 <img src="img/crosswords.gif" class="q-img q-img-centered">
 
 -------------------
 
-# X = `cursewords`
+### X = `cursewords`
 
 ################################################################################
 
 G
 ---
 
-One of the most iconic scenes in sci-tech films, **X** was actually made from characters scanned from Japanese sushi cookbooks, which explains the character composition. Sound designer DA Davis digitized raindrops against window panes to create the sound effects as X plays. X is now a hallmark of digital tech and hacker culture, and is eponymous with the movie in which it was used, similar to Star Wars' opening crawl.
+One of the most iconic scenes in sci-tech films, **X** was actually made from characters scanned from Japanese sushi cookbooks, which explains the character composition. Sound designer DA Davis digitized raindrops against window panes to create the sound effects as **X** plays. **X** is now a hallmark of digital tech and hacker culture, and is eponymous with the movie in which it was used, similar to Star Wars' opening crawl.
 
-ID X.
+ID **X**.
 
 -------------------
 
-## Matrix digital rain
+### Matrix digital rain
 
 <img src="img/matrix.jpeg" class="q-img q-img-centered">
 
@@ -87,13 +87,13 @@ To make the lack of antennae less apparent, they wave their front legs above the
 W
 ---
 
-**X** is an american term for _a report, project, or anything else presented in a flashy way with little (or sometimes misleading) substance_. X is a cultural art form, but it acquired this derogatory meaning after drawn out peace-time treaty negotiations between the United States and Japan which had extended to 1960, and because Japan, in an effort "to shed its image as a global marauder" sent X to the U.S. after World War II to sow the seeds of goodwill.
+**X** is an american term for _a report, project, or anything else presented in a flashy way with little (or sometimes misleading) substance_. **X** is a cultural art form, but it acquired this derogatory meaning after drawn out peace-time treaty negotiations between the United States and Japan which had extended to 1960, and because Japan, in an effort "to shed its image as a global marauder" sent **X** to the U.S. after World War II to sow the seeds of goodwill.
 
 ID **X**.
 
 -------------------
 
-## Kabuki Dance
+### Kabuki Dance
 
 <img src="img/kabuki.jpeg" class="q-img q-img-centered">
 
@@ -102,15 +102,15 @@ ID **X**.
 WG
 ---
 
-In business, **X** has now become *genericised*, that is, the brand or company X is now synonymous with a certain action, such as 'googling' for search engines and 'combiflam' for paracetamol/ibuprofen. This is strange, as X is neither relevant nor holds significant market share in the industry in which it is currently genericised (they hold around 25% in a very competitive market). 
+In business, **X** has now become *genericised*, that is, the brand or company **X** is now synonymous with a certain action, such as 'googling' for search engines and 'combiflam' for paracetamol/ibuprofen. This is strange, as **X** is neither relevant nor holds significant market share in the industry in which it is currently genericised (they hold around 25% in a very competitive market). 
 
-X used to have a monopoly on the business, but they suffered a slow and painful decline, and in tech circles X is more popular for several other things, other than their main business.
+**X** used to have a monopoly on the business, but they suffered a slow and painful decline, and in tech circles **X** is more popular for several other things, other than their main business.
 
-ID the company X
+ID the company **X**.
 
 -------------------
 
-## Xerox Corporation
+### Xerox Corporation
 
 In tech circles, they're more famous for Xerox PARC and conceiving the mouse/gui/other modern tech ideas.
 
@@ -152,15 +152,15 @@ WO answer here
 YG
 ---
 
-It's absurd for a program to have superpowers, but the siblings X and Y have an easter egg, if not a superpower. When asked, X claims to have the Z superpower, whereas Y doesn't. As a result, when prompted for an easter egg, Y has a very different response when compared to X.
+It's absurd for a program to have superpowers, but the siblings **X** and **Y** have an easter egg, if not a superpower. When asked, **X** claims to have the **Z** superpower, whereas **Y** doesn't. As a result, when prompted for an easter egg, **Y** has a very different response when compared to **X**.
 
-ID X, Y, Z (3,3,4 split). Bonus points (+5) for explaining Y's easter egg, *only if* you get all of X, Y and Z.
+ID **X**, **Y**, **Z** (3,3,4 split). Bonus points (+5) for explaining **Y**'s easter egg, *only if* you get all of **X**, **Y** and **Z**.
 
 <img src="img/moo_q.png" class="q-img q-img-centered">
 
 -------------------
 
-## X = `apt-get`, Y = `aptitude` and Z = Super-Cow powers
+### X = `apt-get`, Y = `aptitude` and Z = Super-Cow powers
 
 `apt-get` (advanced packaging tool) has **super-cow powers**, whereas aptitude does not. If you're on a debian-based machine, typing out `apt-get --help | grep -i cow` would tell you.
 
@@ -179,7 +179,7 @@ ID **C**, an industry-prevalent tool for aircraft modelling due to it’s abilit
 
 -------------------
 
-## C = CATiA, X = Airbus A380
+### C = CATiA, X = Airbus A380
 
 CATiA v4 and CATiA v5 had major compatibility issues, and this bogged down development of the A380
 
@@ -188,13 +188,21 @@ CATiA v4 and CATiA v5 had major compatibility issues, and this bogged down devel
 YO
 ---
 
-Math x chai x matcha
-maybe add an ss, with logo?
-color green as hint?
+**X**.io is an online editor for math. The name **X** is a wordplay on math and a certain "condiment".
+
+The image below, along with the colour palette of the website, helps in figuring out the condiment.
+
+
+<img src="img/mathcha_q.png" class="q-img q-img-centered">
+
+<!--Do I hide the logo or na?-->
 
 -------------------
 
 ### mathcha.io
+A portmanteau of math and matcha.
+
+<img src="img/mathcha.png" class="q-img q-img-centered">
 
 ################################################################################
 
@@ -203,7 +211,7 @@ YB
 ---
 
 In a Twitter thread about the wonderful world of birds of Papua New Guinea, a user humorously argues that
-<p style="margin-left: 20px; font-style: italic;">
+<p style="margin-left: 20px;">
 I'm pretty certain the deal with X birds is that they have a truly ___________ __________, unlike those lying Y birds that just put a white and grey checkered __________ back there... 
 </p>
 ID X and Y.
@@ -229,7 +237,7 @@ Identify the skyscraper in question.
 
 -------------------
 
-## The Gherkin
+### The Gherkin
 
 If you typed 30 St Mary Axe, you're either amazing at architecture, or really sus.
 
@@ -270,7 +278,7 @@ What (who?) is the 2012 London olympic flame being passed over here?
 
 -------------------
 
-## Alan Turing('s Statue)
+### Alan Turing('s Statue)
 
 2012 was the 100th anniversary of Alan Turing's Birthday
 
@@ -291,7 +299,7 @@ ID **X**, the common name of this family of algorithms.
 
 -------------------
 
-## Ant colony optimization
+### Ant colony optimization
 
 _agents_ are simply ants, which secrete pheromones
 
@@ -300,7 +308,7 @@ _agents_ are simply ants, which secrete pheromones
 WOG
 ---
 
-**X** cutting or **X** partitioning is a type of cutting/partitioning in which only _edge to edge cuts_ are allowed (cuts that go from one edge of the polygon to the other). This method has applications in glass cutting, where large sheets of glass need to be cut into smaller sizes using edge to edge cuts, and also in designing floorplans in microelectronics. X is aptly named after a tool that could only make edge to edge cuts, and not intermediate cuts.
+**X** cutting or **X** partitioning is a type of cutting/partitioning in which only _edge to edge cuts_ are allowed (cuts that go from one edge of the polygon to the other). This method has applications in glass cutting, where large sheets of glass need to be cut into smaller sizes using edge to edge cuts, and also in designing floorplans in microelectronics. **X** is aptly named after a tool that could only make edge to edge cuts, and not intermediate cuts.
 
 ID **X**.
 
@@ -308,7 +316,7 @@ ID **X**.
 
 -------------------
 
-## Guillotine cutting
+### Guillotine cutting
 
 ################################################################################
 
@@ -322,7 +330,7 @@ This is a job opening at which tech company? Or, which company would need an eco
 
 -------------------
 
-## Valve
+### Valve
 
 If you're interested, check out [https://www.valvesoftware.com/en/jobs?job_id=4](https://www.valvesoftware.com/en/jobs?job_id=4) :)
 
@@ -370,16 +378,21 @@ Why is there a sharp decline in its frequency after the 1800s?
 YGR
 ---
 
-An X attack is a sort of attack prevelant in distributed networks. The attack proceeds by the creation of multiple fake *identities* that are attached to a single *entity* which lets the attacker have a large level of control over the network.
+An **X** protocol, sometimes also called a **Y** protocol, refers to a broad class of algorithms or protocols which propagate information in a distributed network. The main structure of any such algorithm is as follows:
 
-ID X, a book of the same name concerning such an identity creation in a completely different context.
+1. With some given frequency, each machine picks some other machine at random and shares some information.
+2. The information shared in each interaction is of a bounded length.
+3. The communication need not be reliable in every interaction.
 
-<!--// can be confused with Jekyll/Hyde-->
+Find **X** or **Y**. **X** being something that many people show disdain for but often end up participating in, while **Y** is something that all of us have heard more than enough of in recent times.
 
 -------------------
 
-# X = Sybil
-named after the 1973 book Sybil, about the medical treatment of a woman with dissociative identity disorder.
+### X = Gossip, Y = Epidemic
+
+Its Wikipedia entry is pretty fun,
+
+*"Each employee pairs off with another, chosen at random, and shares the latest gossip. At the start of the day, Dave starts a new rumor: he comments to Bob that he believes that Charlie dyes his mustache. At the next meeting, Bob tells Alice, while Dave repeats the idea to Eve. After each water cooler rendezvous, the number of individuals who have heard the rumor roughly doubles (though this doesn't account for gossiping twice to the same person; perhaps Dave tries to tell the story to Frank, only to find that Frank already heard it from Alice)."*
 
 ################################################################################
 
@@ -446,3 +459,16 @@ how to factorize twelve or fifteen.<br />
 
 #########################################################
 
+YGR
+---
+
+An **X** attack is a sort of attack prevelant in distributed networks. The attack proceeds by the creation of multiple fake *identities* that are attached to a single *entity* which lets the attacker have a large level of control over the network.
+
+ID **X**, a late 20th century book of the same name concerning such an identity creation in a completely different context.
+
+<!--// can be confused with Jekyll/Hyde-->
+
+-------------------
+
+### X = Sybil
+named after the 1973 book Sybil, about the medical treatment of a woman with dissociative identity disorder.
