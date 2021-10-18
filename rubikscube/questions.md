@@ -169,10 +169,15 @@ ID X, Y, Z (3,3,4 split). Bonus points (+5) for explaining Y's easter egg, *only
 YR
 ---
 
+Airbus engineers used the CAD package **C** to design the airplane **X**. Due to versioning differences between **C** (the older versions’ saved files were incompatible with the newer version, and needed a converter), the wires running along the fuselage of **X** were too short when the fuselage was assembled. As a result, Airbus faced heavy losses and delays in the production of **X**, and had to rework the design.
 
+ID **C**, an industry-prevalent tool for aircraft modelling due to it’s ability to handle splines and smooth surfaces, and **X**, the aircraft Airbus was building with **C**.
 
 -------------------
 
+## C = CATiA, X = Airbus A380
+
+CATiA v4 and CATiA v5 had major compatibility issues, and this bogged down development of the A380
 
 ################################################################################
 
@@ -193,7 +198,7 @@ color green as hint?
 YB
 ---
 
-In a Twitter thread about the wonderful world of birds of Papa New Guinea, a user humorously argues that
+In a Twitter thread about the wonderful world of birds of Papua New Guinea, a user humorously argues that
 <p style="margin-left: 20px; font-style: italic;">
 I'm pretty certain the deal with X birds is that they have a truly ___________ __________, unlike those lying Y birds that just put a white and grey checkered __________ back there... 
 </p>
@@ -210,23 +215,13 @@ ID X and Y.
 BR
 ---
 
-BR question here
-
--------------------
-
-BR answer here
-
-################################################################################
-
-RG
----
-
 _Biomimetic architecture_ is a type of architecture that takes inspiration from nature for efficient design ideas. An iconic skyscraper, inspired from the design of the venus flower basket sponge (pictured below) is an example of the great success of this type of architecture. The skyscraper incorporates energy-saving methods which allow it to use only half the power that a similar tower would typically consume. It has won Several awards for it’s design and energy efficiency.
 
 Identify the skyscraper in question.
 
 <img src="img/vfbasket.jpeg" class="q-img">
 <img src="img/vfbasket_2.jpeg" class="q-img">
+
 
 -------------------
 
@@ -235,6 +230,29 @@ Identify the skyscraper in question.
 If you typed 30 St Mary Axe, you're either amazing at architecture, or really sus.
 
 <img src="img/gherkin.png" class="q-img q-img-centered">
+
+
+################################################################################
+
+RG
+---
+
+*Rät* is a viral 2020 song about the disillusionment of the younger generation from the Silicon Valley. Following is an excerpt from the same.
+<p style="margin-left: 20px; font-style: italic;">
+So fuck your tunnels, fuck your cars, fuck your rockets, fuck your cars again<br />
+You promised you'd be Tesla, but you're just another Edison<br />
+'Cause Tesla broke a patent, all you ever broke were hearts<br />
+I can't believe you tore humanity apart<br />
+With the very same machines that could have been our brand new start<br />
+</p>
+The original name of the song was longer, consisting of two words, referencing a meme. The final name, Rät, is a shortened version of the same.
+
+What was the original name?
+
+-------------------
+
+### Elongated Muskrat
+
 
 ################################################################################
 
@@ -294,8 +312,7 @@ ID **X**.
 WGR
 ---
 
-// I can't distinguish valve here with some other gaming company here, need to make changes
-
+<!--I can't distinguish valve here with some other gaming company here, need to make changes-->
 This is a job opening at which tech company? Or, which company would need an economist to study _virtual economies_?
 
 <img src="img/valve_eco_q.png" class="q-img q-img-centered">
@@ -354,7 +371,7 @@ An X attack is a sort of attack prevelant in distributed networks. The attack pr
 
 ID X, a book of the same name concerning such an identity creation in a completely different context.
 
-// can be confused with Jekyll/Hyde
+<!--// can be confused with Jekyll/Hyde-->
 
 -------------------
 
@@ -377,7 +394,7 @@ YRB answer here
 YBO
 ---
 
-// maybe give the name spikey ask them to find the company from there?
+<!-- maybe give the name spikey ask them to find the company from there?-->
 
 The following are all various closed mathematical surfaces, ranging from the simple augmented icosahedron to the hyperbolic dodecahedron. All these polygons have been the logos/mascots of a very popular mathematical tool. 
 
@@ -404,30 +421,7 @@ anything below here is not going to be picked up by the question picker, so feel
 free to write comments.
 
 
-I find it hard to directly put questions into categories so imma frame them here for now. ~R
-
-
-G+???
----
-
-*Rät* is a viral 2020 song about the disillusionment of the younger generation from the Silicon Valley. Following is an excerpt from the same.
-<p style="margin-left: 20px; font-style: italic;">
-So fuck your tunnels, fuck your cars, fuck your rockets, fuck your cars again<br />
-You promised you'd be Tesla, but you're just another Edison<br />
-'Cause Tesla broke a patent, all you ever broke were hearts<br />
-I can't believe you tore humanity apart<br />
-With the very same machines that could have been our brand new start<br />
-</p>
-The original name of the song was longer, consisting of two words, referencing a meme. The final name, Rät, is a shortened version of the same.
-
-What was the original name?
-
--------------------
-
-### Elongated Muskrat
-
-################################################################################
-
+I find it hard to directly put questions into categories so imma frame them here for now. -R
 
 ---
 
@@ -444,8 +438,8 @@ how to factorize twelve or fifteen.<br />
 
 ### Quantum
 
-################################################################################
+#########################################################
 
 
-################################################################################
+#########################################################
 
