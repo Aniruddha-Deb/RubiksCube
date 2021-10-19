@@ -168,7 +168,7 @@ YG
 
 It's absurd for a program to have superpowers, but the siblings **X** and **Y** have an easter egg, if not a superpower. When asked, **X** claims to have the **Z** superpower, whereas **Y** doesn't. As a result, when prompted for an easter egg, **Y** has a very different response when compared to **X**.
 
-ID **X**, **Y**, **Z** (3,3,4 split). Bonus points (+5) for explaining **Y**'s easter egg, *only if* you get all of **X**, **Y** and **Z**.
+ID **X** or **Y**, and **Z** (5+5 split). Bonus points (+5) for explaining **Y**'s easter egg, *only if* you get all of **X** or **Y** and **Z**.
 
 <img src="img/moo_q.png" class="q-img q-img-centered">
 
@@ -187,13 +187,13 @@ ID **X**, **Y**, **Z** (3,3,4 split). Bonus points (+5) for explaining **Y**'s e
 YR
 ---
 
-Airbus engineers used the CAD package **C** to design the airplane **X**. Due to versioning differences between **C** (the older versions’ saved files were incompatible with the newer version, and needed a converter), the wires running along the fuselage of **X** were too short when the fuselage was assembled. As a result, Airbus faced heavy losses and delays in the production of **X**, and had to rework the design.
+Airbus engineers used the CAD package CATiA to design the airplane **X**. Due to versioning differences between CATiA v4 and CATiA v5 (the older versions’ saved files were incompatible with the newer version, and needed a converter), the wires running along the fuselage of **X** were too short when the fuselage was assembled. As a result, Airbus faced $6 Bn in losses and delays in the production of **X**, and had to rework the design.
 
-ID **C**, an industry-prevalent tool for aircraft modelling due to it’s ability to handle splines and smooth surfaces, and **X**, the aircraft Airbus was building with **C**.
+ID **X**, the aircraft Airbus was building, which faced this major delay.
 
 -------------------
 
-### C = CATiA, X = Airbus A380
+### X = Airbus A380
 
 CATiA v4 and CATiA v5 had major compatibility issues, and this bogged down development of the A380
 
@@ -303,9 +303,9 @@ What (who?) is the 2012 London olympic flame being passed over here?
 OB
 ---
 
-**X** optimization is a heuristic method of finding the shortest path in a graph. In this method, _agents_ are made, which are made to travel back and forth between the source and the target node, and the agents secrete _pheromones_ whenever they travel. The pheromones are not constant, and would continuously evaporate with time. Agents also prefer the path with more pheromones.
+**X** optimization is a heuristic method of finding the shortest path in a graph, inspired from biology. In this method, _agents_ are made, which are made to travel back and forth between the source and the target node, and the agents secrete _markers_ whenever they travel. The markers are not constant, and would continuously evaporate with time. Agents also prefer the path with more markers.
 
-As a result, the shortest path would have the maximum concentration of pheromones, since the pheromones would evaporate the least along this path (because of short travel time and high frequency of agents).
+As a result, the shortest path would have the maximum concentration of markers, since the markers would evaporate the least along this path (because of short travel time and high frequency of agents).
 
 ID **X**, the common name of this family of algorithms.
 
@@ -315,7 +315,7 @@ ID **X**, the common name of this family of algorithms.
 
 ### Ant colony optimization
 
-_agents_ are simply ants, which secrete pheromones
+_agents_ are simply ants, which secrete pheromones (_markers_)
 
 ################################################################################
 

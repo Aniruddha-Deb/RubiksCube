@@ -6,10 +6,13 @@ Rules:
 	
 1. Each color corresponds to a theme: Biz, Science, Tech, Engineering, Math or Software. You would need to derive the theme yourself, as QM's would not reveal the theme.
 2. Depending on the number of colors, the question mapped to that cubelet would satisfy all the themes specified: a cubelet with one color would satisfy one theme (a face), a cubelet with two colors would satisfy two (an edge), and a cubelet with three colors would satisfy three (a corner).
-3. Each team gets to pick a question whenever it's their turn, according to standard pounce/bounce rules. Pounce remains open for a minute and is controlled by a timer, after which pounce is closed and bounce commences.
-4. **Please only use the bot to pounce**. Pounces which tag Quizmaster, or any other pounces, will not be accepted.
-5. Pounces are live, and would show up immediately on the screen. The pounce window notification would also show on the screen, indicating if the pounce window is open or not.
-6. Erno would mark your pounces with a ✅ if they're accepted, or with a ❌ otherwise (if you pounce outside the window).
+3. All questions would have the same scoring pattern (+10/-5 pounce, +10 bounce) unless specified. Part pounce is not accepted, unless specified.
+4. Each team gets to pick a question whenever it's their turn, according to standard pounce/bounce rules. Pounce remains open for a minute and is controlled by a timer, after which pounce is closed and bounce commences.
+5. **Please only use the bot to pounce**. Pounces which tag Quizmaster, or any other pounces, will not be accepted.
+6. Pounces are live, and would show up immediately on the screen. The pounce window notification would also show on the screen, indicating if the pounce window is open or not.
+7. Erno would mark your pounces with a ✅ if they're accepted, or with a ❌ otherwise (if you pounce outside the window).
+8. *Blocking*: if a team chooses to block, they will have to pounce, irrespective of whether they're doing the question on bounce or not. If even one team blocks, then no further hints are given.
+9. On bounce, the last team to give all correct answers will get full points, and the question would terminate. Part points would be given to the first team to get that part right (even if no team answers all parts correctly).
 
 If this seems complicated, it will all become clear after the test pounce round. Please keep your cameras on, and no googling. Good luck and have fun!
 `
