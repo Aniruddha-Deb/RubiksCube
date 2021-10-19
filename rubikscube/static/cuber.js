@@ -4695,6 +4695,7 @@ ERNO.extend( ERNO.Cube.prototype, {
 			rotation = ( twist.degrees === undefined ? 90 : twist.degrees ) * twist.vector,
 			radians  = rotation.degreesToRadians(),
 			duration = Math.abs( radians - slice.rotation ) / ( Math.PI * 0.5 ) * this.twistDuration;
+		console.log(duration);
 
 
 

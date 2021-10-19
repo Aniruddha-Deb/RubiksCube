@@ -1,4 +1,18 @@
 cube = new ERNO.Cube();
+var promoCube = new ERNO.Cube();
+
+let rules = `
+Rules:
+	
+1. Each color corresponds to a theme: Biz, Science, Tech, Engineering, Math or Software. You would need to derive the theme yourself, as QM's would not reveal the theme.
+2. Depending on the number of colors, the question mapped to that cubelet would satisfy all the themes specified: a cubelet with one color would satisfy one theme (a face), a cubelet with two colors would satisfy two (an edge), and a cubelet with three colors would satisfy three (a corner).
+3. Each team gets to pick a question whenever it's their turn, according to standard pounce/bounce rules. Pounce remains open for a minute and is controlled by a timer, after which pounce is closed and bounce commences.
+4. **Please only use the bot to pounce**. Pounces which tag Quizmaster, or any other pounces, will not be accepted.
+5. Pounces are live, and would show up immediately on the screen. The pounce window notification would also show on the screen, indicating if the pounce window is open or not.
+6. Erno would mark your pounces with a ✅ if they're accepted, or with a ❌ otherwise (if you pounce outside the window).
+
+If this seems complicated, it will all become clear after the test pounce round. Please keep your cameras on, and no googling. Good luck and have fun!
+`
 
 class Quiz {
 
@@ -77,8 +91,7 @@ class Quiz {
 		if (!this.showing_q && !this.showing_a) {
 			this.curr_q = question.question;
 			this.curr_q_ans = question.answer;
-			this.showing_q = true;
-			document.getElementById('question').innerHTML = marked(this.curr_q);
+			this.display_curr_question();
 			document.getElementById('presentation').classList.remove('hidden');
 
 			// set colors
@@ -104,6 +117,13 @@ class Quiz {
 		}
 	}
 
+	display_curr_question() {
+		this.showing_q = true;
+		this.showing_a = false;
+		document.getElementById('prev-button').classList.add("hidden");
+		document.getElementById('question').innerHTML = marked(this.curr_q);
+	}
+
 	display_question_answer() {
 		if (this.pounce_open) {
 			var r = confirm("Pounce will be closed. Continue without bounce?");
@@ -113,11 +133,16 @@ class Quiz {
 			}
 		}
 		else {
-			this.showing_q = false;
-			this.showing_a = true;
-			document.getElementById('question').innerHTML = marked(this.curr_q_ans);
+			this.display_curr_question_answer();
 			this.timer.reset_timer();
 		}
+	}
+
+	display_curr_question_answer() {
+		this.showing_q = false;
+		this.showing_a = true;
+		document.getElementById('question').innerHTML = marked(this.curr_q_ans);
+		document.getElementById('prev-button').classList.remove("hidden");
 	}
 
 	return_to_cube() {
@@ -139,6 +164,7 @@ class Quiz {
 			color_2.classList.remove('hidden');
 		}
 		document.getElementById('presentation').classList.add('hidden');
+		document.getElementById('prev-button').classList.add("hidden");
 		socket.emit("question_attempted", this.curr_q_code);
 	}
 }
@@ -292,11 +318,21 @@ function next() {
 	}
 }
 
+function prev() {
+	if (quiz.showing_a) {
+		quiz.display_curr_question();
+	}
+}
+
 var socket = null;
 var quiz = null;
+var showing_instructions = true;
 
 function onLoad() {
+	document.getElementById("rules").innerHTML = marked(rules);
 	document.getElementById("cube").appendChild(cube.domElement);
+	document.getElementById("promo-cube").appendChild(promoCube.domElement);
+
 	socket = io("http://localhost:5000/frontend");
 
 	var shiftDown = false;
@@ -309,6 +345,18 @@ function onLoad() {
 		if (shiftDown = true) {
 			shiftDown = false;
 		}
+		var charCode = e.keyCode || e.which;
+    	if (charCode === 190) {
+    		if (showing_instructions) {
+	    		showing_instructions = false;
+	    		document.getElementById("intro").classList.add("hidden");
+	    	}
+	    	else {
+	    		showing_instructions = true;
+	    		document.getElementById("intro").classList.remove("hidden");	    		
+	    	}
+    	}
+    	
 	});
 
 	cube.mouseInteraction.addEventListener('click', (evt) => {

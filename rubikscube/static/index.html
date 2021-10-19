@@ -16,6 +16,15 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body onload="onLoad()">
+	<div id="intro" class="intro">
+		<div class="title">
+			<div class="quiz-name">Rubik's Cube</div>
+			<div id="promo-cube" class="promo-cube"></div>
+			<div class="qm-name">by Aniruddha and Rishabh</div>
+			<div class="any-key-to-start">Press . to start</div>
+		</div>
+		<div id="rules" class="rules"></div>
+	</div>
 	<div id="cube" class="cube-frame">
 	</div>
 	<div class="presentation hidden" id="presentation">
@@ -25,7 +34,8 @@
 			<div id="color-3" class="question-color"></div>
 		</div>
 		<div class="markdown" id="question"></div>
-		<div class="presentation-button" id="next-button" onclick="next()">→</div>
+		<div class="presentation-button presentation-button-next" id="next-button" onclick="next()">→</div>
+		<div class="presentation-button presentation-button-prev hidden" id="prev-button" onclick="prev()">←</div>
 	</div>
 	<div id="pounce-notif" class="pounce-notif hidden" onclick="pounce_notif_click()">Pounce is Open</div>
 	<div id="scoreboard-holder" class="scoreboard">
