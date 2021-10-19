@@ -132,18 +132,24 @@ X was first used in Canada in 1922, and the scientists who first found and used 
 WR
 ---
 
-WR question here
+A **X** project is a project developed by a relatively small and loosely structured group of people who research and develop a project primarily for the sake of radical innovation. The term originated during World War II when a certain aircraft manufacturer set up an incubator in a circus tent next to a plastics factory in Burbank. The strong smells from the neighbouring factory gave the incubator the nickname **X**.
+
+ID **X**, a common term for a project shrouded in secrecy.
 
 -------------------
 
-WR answer here
+## X = Skunk Works
+
+SkunkWorks is also the title of Ben Rich's biography, the 'father of stealth' and Kelly Johnson's successor as the head of Skunkworks
+
+<img src="img/skunkworks.jpeg" class="q-img q-img-centered">
 
 ################################################################################
 
 WO
 ---
 
-The blue line in the following image represents the net value of a famous hedge fund run by nobel laureates. The hedge fund spectacularily crashed in 1996, leading to a dead period in algorithmic trading.
+The blue line in the following image represents the net value of a famous quantitative trading hedge fund run by nobel laureates. The hedge fund spectacularily crashed in 1996, leading to a dead period in algorithmic trading.
 
 ID the hedge fund in question, which proved to be _very short term_.
 
@@ -350,22 +356,37 @@ If you're interested, check out [https://www.valvesoftware.com/en/jobs?job_id=4]
 WRB
 ---
 
-WRB question here
+What is the lady doing in the following image? (Hint: what's being done is a crucial step in the electronics fabrication industry, and the driving force behind commercialization of semiconductor fabrication).
+
+<img src="img/czochralski.jpeg" class="q-img">
+<img src="img/czochralski_zoom.png" class="q-img">
 
 -------------------
 
-WRB answer here
+### Pulling pure silicon crystals using the Czochralski process
+
+Points for _purifying silicon_ / _pulling pure silicon ingots_ / _growing pure silicon crystals_ as well.
+
+<img src="img/czochralski_explanation.jpeg" class="q-img q-img-centered">
 
 ################################################################################
 
 WBO
 ---
 
-WBO question here
+A(n) **X** retracement is a method of determining support and resistance levels. In this, the two extreme points on a chart are taken, and the vertical distance is divided according to **X**. Horizontal lines drawn on these dividing points are expected to provide support and resistance levels while the price falls, or after the fall. 
+
+Give **X**.
+
+<img src="img/fib_retracement.png" class="q-img q-img-centered">
 
 -------------------
 
-WBO answer here
+## Fibonacci Retracements
+
+The numbers on the chart followed the golden ratio (or rather, inverses of the golden ratio)
+
+<img src="img/fib_retracement.png" class="q-img q-img-centered">
 
 ################################################################################
 

@@ -17,7 +17,7 @@ class Quiz:
         qbuffer = ""
         with open(question_file, 'r') as questions_raw:
             for l in questions_raw:
-                if re.match(r'[#]{15}[#]+', l):
+                if re.match(r'[#]{80}', l):
                     question = Question(qbuffer)
                     if question.code in self.questions:
                         raise Exception("Loaded two questions with the same key. Ignoring second one")
@@ -32,7 +32,7 @@ class Quiz:
         qcode = ''.join(sorted(qcode.strip()))
         with open(question_file, 'r') as questions_raw:
             for l in questions_raw:
-                if re.match(r'[#]{15}[#]+', l):
+                if re.match(r'[#]{80}', l):
                     question = Question(qbuffer)
                     if question.code == qcode:
                         self.questions[question.code].question = question.question
