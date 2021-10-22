@@ -1,34 +1,25 @@
 R
 ---
 
-The Boeing 787 Dreamliner is one of the most fuel-efficient aircraft to be made. To accomplish this, engineers did something very unconventional while making the aircraft. The difference is obvious in this image of the 787 alongside the 737. An interesting consequence of this difference is that the 787 has special equipment to handle lightning strikes.
+<!--subbed out for -->
+Pun on the name of a famous rock band to get the name of the paper describing this Generative Adversarial Network (GAN) for anime avatar generation
 
-What major innovation did engineers come up with while making the 787?
-
-<img src="img/787_737.jpeg" class="q-img q-img-centered">
+<img src="img/gan_roses.png" class="q-img q-img-centered">
 
 -------------------
 
-### The 787's fuselage and wings are made of Carbon Fibre Composites
-
-Since carbon fibre doesn't conduct electricity (unlike aluminium), the 787 needed special lightning protection gear
-
-<img src="img/787_737.jpeg" class="q-img q-img-centered">
+## GAN's and Roses
 
 ################################################################################
 
 O
 ---
 
-The following widely-used theorem in probability and statistics has an apt name: in spite of the very rigorous proof involved for this theorem, the formulation of this theorem is very intuitive, and resembles something that a statistician would do _in his sleep_. 
-
-What is the apt name given to this theorem?
-
-<img src="img/lotus.png" class="q-img q-img-centered">
+A quine refers to a program that outputs itself. An X is a specific type of quine that prints itself and calls another quine, which in turns calls another quine and so on until you reach back to the start. What is X, the name being inspired by mythology?
 
 -------------------
 
-### Law of the Unconscious Statistician
+## ouroboros
 
 ################################################################################
 
@@ -488,6 +479,19 @@ how to factorize twelve or fifteen.<br />
 ### Quantum
 
 #########################################################
+
+The Boeing 787 Dreamliner is one of the most fuel-efficient aircraft to be made. To accomplish this, engineers did something very unconventional while making the aircraft. The difference is obvious in this image of the 787 alongside the 737. An interesting consequence of this difference is that the 787 has special equipment to handle lightning strikes.
+
+What major innovation did engineers come up with while making the 787?
+
+<img src="img/787_737.jpeg" class="q-img q-img-centered">
+
+### The 787's fuselage and wings are made of Carbon Fibre Composites
+
+Since carbon fibre doesn't conduct electricity (unlike aluminium), the 787 needed special lightning protection gear
+
+<img src="img/787_737.jpeg" class="q-img q-img-centered">
+
 
 
 #########################################################
