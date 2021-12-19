@@ -1,5 +1,6 @@
 cube = new ERNO.Cube();
 var promoCube = new ERNO.Cube();
+var pdf = new jsPDF('l', 'px');
 
 let rules = `
 Rules:
@@ -331,6 +332,31 @@ var socket = null;
 var quiz = null;
 var showing_instructions = true;
 
+function addToPDF() {
+    var w = document.getElementById('presentation').offsetWidth;
+    console.log("OffsetWidth = " + w)
+    var h = document.getElementById('presentation').offsetHeight;
+    console.log("OffsetHeight = " + h)
+
+    html2canvas(document.getElementById('presentation')).then(function (canvas) {
+        var imgData = canvas.toDataURL("image/jpeg");
+        //pdf.deletePage(1);
+        //pdf.addPage(mm.w, mm.h);
+
+        //console.log(pdf.internal.pageSize.getWidth());
+        //console.log(pdf.internal.pageSize.getHeight());
+
+        //const imgProps= pdf.getImageProperties(imgData);
+        //console.log(imgProps.width);
+        pdf.addPage(w, h);
+        pdf.addImage(imgData, 'JPEG', 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
+    });
+}
+
+function savePDF() {
+	pdf.save("output.pdf");
+}
+
 function onLoad() {
 	document.getElementById("rules").innerHTML = marked(rules);
 	document.getElementById("cube").appendChild(cube.domElement);
@@ -359,7 +385,17 @@ function onLoad() {
 	    		document.getElementById("intro").classList.remove("hidden");	    		
 	    	}
     	}
-    	
+	});
+	document.addEventListener('keypress', (e) => {
+		var charCode = e.keyCode;
+		if (charCode === 112) {
+    		console.log('adding to PDF');
+    		addToPDF();
+    	}
+    	else if (charCode === 113) {
+    		console.log('saving PDF');
+    		savePDF();
+    	}
 	});
 
 	cube.mouseInteraction.addEventListener('click', (evt) => {
